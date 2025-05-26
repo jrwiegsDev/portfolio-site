@@ -6,14 +6,22 @@
     <h1>About Me</h1>
 
     <div style="display: flex; align-items: flex-start; gap: 20px;">
-        <img src="{{ url_for('static', filename='images/Me_Sunglasses.jpg') }}" alt="Joe in sunglasses" style="max-width: 200px; border-radius: 10px; box-shadow: 0 0 10px #000;">
+        <div class="image-hover-container" style="max-width: 200px; border-radius: 10px; box-shadow: 0 0 10px #000;">
+    <img src="{{ url_for('static', filename='images/Me_Sunglasses.jpg') }}" alt="Joe Cool... or so I've heard">
+    <div class="image-hover-text">Joe Cool... or so I've heard</div>
+</div>
+
 
         <div>
-            <p>Hello! I’m Joe, and I’m a <strong>healthcare auditor</strong> and <strong>self-taught data analyst</strong> who’s spent months building portfolio projects and strengthening my skills in <strong>Python, SQL, Excel, and Tableau</strong>.</p>
+            <p>Hello! I’m Joe, and I’m a healthcare auditor and self-taught data analyst who’s spent<br>
+                months building portfolio projects and strengthening my skills in <strong>Python, SQL, Excel, and Tableau</strong>.</p>
 
-            <p>With a background in <strong>engineering, project coordination, quality review, and political research</strong>, I’ve developed a burning passion for digging into data, uncovering insights, and turning complex information into something clear and actionable.</p>
+            <p>With a background in engineering, project coordination, quality review, and political research,<br>
+                I’ve developed a burning passion for digging into data, uncovering insights, and turning<br>
+                complex information into something clear, useful, and actionable.</p>
 
-            <p>I’m now ready to bring that energy, experience, and enthusiasm into my next role as a <strong>data analyst and developer</strong>, and I’m excited to make an impact!</p>
+            <p>I’m ready to bring that enthusiasm for data, experience with hands-on projects, and hunger to learn more<br>
+                into my next role as a <strong>data analyst and/or developer</strong>, and I’m excited to make a positive impact!</p>
         </div>
     </div>
 
@@ -22,16 +30,27 @@
     <h2>A History</h2>
 
     <div style="display: flex; align-items: flex-start; gap: 20px;">
-        <img src="{{ url_for('static', filename='images/Me_No_Sunglasses.jpg') }}" alt="Joe no sunglasses" style="max-width: 200px; border-radius: 10px; box-shadow: 0 0 10px #000;">
+        <div class="image-hover-container" style="max-width: 200px; border-radius: 10px; box-shadow: 0 0 10px #000;">
+    <img src="{{ url_for('static', filename='images/Me_No_Sunglasses.jpg') }}" alt="Pro tip: do not look directly at the sun.">
+    <div class="image-hover-text">Pro tip: do not look directly at the sun.</div>
+</div>
+
 
         <div>
-            <p>After earning my <strong>Bachelor’s in Civil Engineering</strong> from <strong>SIUE</strong> in <strong>2019</strong>, I started out in <strong>engineering and project coordination</strong> roles where I developed a sharp eye for <strong>process, research, and data</strong>. I was later impacted by COVID-related cuts, and family needs brought me back to Illinois.</p>
+            <p>After earning my <strong>Bachelor’s in Civil Engineering</strong> from SIUE in 2019, I started out in<br>
+                <strong>engineering and project coordination</strong> roles where I developed a sharp eye for <strong>process, research, and data</strong>.<br>
+                I was later impacted by COVID-related cuts, and family needs brought me back to Illinois.</p>
 
-            <p>In the years since, I’ve pivoted into roles that refined my <strong>analytical, organizational, and support skills</strong> — from <strong>customer support analytics</strong> at <strong>Amplify</strong> to my current position as a <strong>Patient Case Auditor</strong> at <strong>ApexNetwork Physical Therapy</strong>, where I manage large volumes of data with over <strong>99% accuracy</strong>.</p>
+            <p>In the years since, I’ve pivoted into roles that refined my <strong>analytical, organizational, and support skills</strong>,<br>
+                from customer support analytics at Amplify to my current position as a Patient Case Auditor at ApexNetwork Physical Therapy,<br>
+                where I manage large volumes of data with over <strong>99% accuracy</strong>.</p>
 
-            <p>In <strong>2024</strong>, I interned with <strong>Relentless</strong> during the election cycle, working directly with <strong>voter files</strong> and <strong>polling data</strong> to support digital organizing efforts. That experience reignited my passion for meaningful data work and inspired me to double down on growing my technical skills.</p>
-
-            <p>Over the past several months, I’ve built up a strong foundation in <strong>Python, SQL, Excel, and Tableau</strong> through portfolio projects, independent study, and lots of messy Jupyter Notebooks. Now, I’m looking ahead to my next chapter: stepping fully into a <strong>data analyst</strong> role where I can apply my skills, solve real-world problems, and keep growing in an environment that values <strong>insight, integrity, and impact</strong>.</p>
+            <p>In 2024, I interned with Relentless during the election cycle, working directly with voter files and polling data<br>
+                to support digital organizing efforts. That experience reignited my passion for meaningful data work and inspired me<br>
+                to double down on growing my technical skills. Over the past several months, I’ve built up a strong foundation<br>
+                in <strong>Python, SQL, Excel, and Tableau</strong> through portfolio projects, independent study, and lots<br>
+                of messy Jupyter Notebooks. Now, I’m looking ahead to my next chapter: stepping fully into a data analyst or developer role<br>
+                where I can apply my skills, solve real-world problems, and keep growing in an environment that values curiosity, insight, and determination.</p>
         </div>
     </div>
 {% endblock %}

@@ -14,6 +14,26 @@
     <a href="/projects/tableau" class="tool-button">Tableau</a>
 </div>
 
-<img src="{{ url_for('static', filename='images/Analyst_Image.png') }}" alt="Projects Visual" class="projects-image">
+<div class="project-highlight" style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: nowrap;">
+    <div class="image-hover-container" style="max-width: 300px; border-radius: 8px;">
+    <img src="{{ url_for('static', filename='images/Analyst_Image.png') }}" alt="Okay... SOMETIMES image generation with AI isn't half bad...">
+    <div class="image-hover-text">Okay... SOMETIMES image generation with AI isn't half bad...</div>
+</div>
+
+    <div class="project-description">
+        <p>
+            One of the projects I’m most proud of is this very portfolio website itself!
+        </p>
+        <p>
+             I designed and built it from scratch using Python and Flask,<br>
+            styled it with HTML and CSS, and deployed it live using GitHub and Render.
+        </p>
+        <p>
+            This isn't just my portfolio site, this is my pet project I built myself.<br>
+            And it will only grow and improve from here!
+        </p>
+    </div>
+</div>
+
 
 {% endblock %}

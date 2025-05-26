@@ -6,24 +6,49 @@
     <div class="home-container">
         <h1>Welcome!</h1>
         <div class="intro-section">
-            <img src="{{ url_for('static', filename='images/Me_Headshot.JPG') }}" alt="Joe Wiegert headshot" class="headshot">
+            <div class="image-hover-container headshot">
+    <img src="{{ url_for('static', filename='images/Me_Headshot.JPG') }}" alt="Headshot">
+    <div class="image-hover-text">Headshot</div>
+</div>
             <div class="intro-text">
                 <p>I’m a Patient Case Auditor by day, and a curious Data Enthusiast by night.</p>
-                <p>I play piano by ear, and I love going on adventures with my partner, Joshua, and
-                    our two dogs, Daisy and Milo!</p>
-                <p>Over the past several months, I’ve been building my foundational analytical skills in Python, SQL,
-                    Excel, and Tableau. My goal is to transition into a full-time Data Science or Analyst role
-                    so I can not only grow my career, but also gain more time and freedom to spend with my family.</p>
+                <p>I play piano by ear, and I love going on adventures with<br>
+                    my partner, Joshua, and our two dogs, Daisy and Milo!</p>
+                <p>Over the past several months, I’ve been building my foundational analytical<br>
+                    skills in Python, SQL, Excel, and Tableau. My goal is to transition into a<br>
+                    full-time Data Science, Analyst, or developer role so I can not only grow my career,<br>
+                    but also gain more time and freedom to spend with my family.</p>
             </div>
         </div>
 
         <!-- Collage Section -->
         <div class="photo-collage">
-            <img src="{{ url_for('static', filename='images/daisy_and_milo.jpg') }}" alt="Daisy and Milo" class="collage-image">
-            <img src="{{ url_for('static', filename='images/me_fishing.jpg') }}" alt="Me Fishing" class="collage-image">
-            <img src="{{ url_for('static', filename='images/me_joshua_fishing.JPG') }}" alt="Me and Joshua Fishing" class="collage-image">
-            <img src="{{ url_for('static', filename='images/me_playing_piano.jpg') }}" alt="Me Playing Piano" class="collage-image">
-            <img src="{{ url_for('static', filename='images/music_with_dad.jpg') }}" alt="Making Music with Dad" class="collage-image">
-        </div>
+
+    <div class="image-hover-container">
+        <img src="{{ url_for('static', filename='images/daisy_and_milo.jpg') }}" alt="Daisy and Milo!">
+        <div class="image-hover-text">Daisy and Milo!</div>
     </div>
+
+    <div class="image-hover-container">
+        <img src="{{ url_for('static', filename='images/me_fishing.jpg') }}" alt="Me fishing, but I never touch the fish. Joshua does all the hard work.">
+        <div class="image-hover-text">Me fishing, but I never touch the fish. Joshua does all the hard work.</div>
+    </div>
+
+    <div class="image-hover-container">
+        <img src="{{ url_for('static', filename='images/me_joshua_fishing.JPG') }}" alt="Me and Joshua after an evening of fishing!">
+        <div class="image-hover-text">Me and Joshua after an evening of fishing!</div>
+    </div>
+
+    <div class="image-hover-container">
+        <img src="{{ url_for('static', filename='images/me_playing_piano.jpg') }}" alt="Me playing piano, working on building my 'Elton Joe' persona...">
+        <div class="image-hover-text">Me playing piano, working on building my 'Elton Joe' persona...</div>
+    </div>
+
+    <div class="image-hover-container">
+        <img src="{{ url_for('static', filename='images/music_with_dad.jpg') }}" alt="I get my musical talent from my dad, and we love to jam out together!">
+        <div class="image-hover-text">I get my musical talent from my dad, and we love to jam out together!</div>
+    </div>
+
+</div>
+
 {% endblock %}
