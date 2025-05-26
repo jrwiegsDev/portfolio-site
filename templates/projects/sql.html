@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}SQL Projects - Joe's Portfolio{% endblock %}
+
+{% block content %}
+    <h1>SQL Projects</h1>
+
+    <!-- Project 1: Polling Analyst SQL -->
+    <div class="project-card">
+        <img src="{{ url_for('static', filename='images/polling_analyst_sql.png') }}" alt="Polling Analyst SQL" class="project-image">
+
+        <h2>Polling Analyst: AI & Misinformation</h2>
+
+        <p><strong>Goal:</strong> Analyze public sentiment around AI-generated political content, trust, and misinformation by demographic groups using simulated survey data.</p>
+
+        <p><strong>SQL Skills:</strong> Complex JOINs, aggregations, CASE logic for custom age bucketing, CTEs, subqueries, percentage breakdowns, and View creation for reusable cleaned data.</p>
+
+        <p><a href="{{ url_for('static', filename='Polling_Analyst_SQL.pdf') }}" target="_blank">View Full PDF Report</a></p>
+    </div>
+
+    <!-- Project 2: Campaign Data SQL -->
+    <div class="project-card">
+        <img src="{{ url_for('static', filename='images/political_project_sql.png') }}" alt="Campaign Data Analysis SQL" class="project-image">
+
+        <h2>Campaign Strategy SQL Analysis</h2>
+
+        <p><strong>Goal:</strong> Identify which campaign factors most strongly predict election wins (fundraising, outreach, events, or turnout).</p>
+
+        <p><strong>SQL Skills:</strong> Joins, CTEs, aggregations, conditional logic, window functions, and data validation across multiple tables.</p>
+
+        <p><a href="{{ url_for('static', filename='Political_Project_SQL.pdf') }}" target="_blank">View Full PDF Report</a></p>
+    </div>
+
+{% endblock %}

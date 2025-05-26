@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Joe's Portfolio{% endblock %}
+
+{% block content %}
+    <div class="home-container">
+        <h1>Welcome!</h1>
+        <div class="intro-section">
+            <img src="{{ url_for('static', filename='images/Me_Headshot.JPG') }}" alt="Joe Wiegert headshot" class="headshot">
+            <div class="intro-text">
+                <p>I’m a Patient Case Auditor by day, and a curious Data Enthusiast by night.</p>
+                <p>I play piano by ear, and I love going on adventures with my partner, Joshua, and
+                    our two dogs, Daisy and Milo!</p>
+                <p>Over the past several months, I’ve been building my foundational analytical skills in Python, SQL,
+                    Excel, and Tableau. My goal is to transition into a full-time Data Science or Analyst role
+                    so I can not only grow my career, but also gain more time and freedom to spend with my family.</p>
+            </div>
+        </div>
+
+        <!-- Collage Section -->
+        <div class="photo-collage">
+            <img src="{{ url_for('static', filename='images/daisy_and_milo.jpg') }}" alt="Daisy and Milo" class="collage-image">
+            <img src="{{ url_for('static', filename='images/me_fishing.jpg') }}" alt="Me Fishing" class="collage-image">
+            <img src="{{ url_for('static', filename='images/me_joshua_fishing.jpg') }}" alt="Me and Joshua Fishing" class="collage-image">
+            <img src="{{ url_for('static', filename='images/me_playing_piano.jpg') }}" alt="Me Playing Piano" class="collage-image">
+            <img src="{{ url_for('static', filename='images/music_with_dad.jpg') }}" alt="Making Music with Dad" class="collage-image">
+        </div>
+    </div>
+{% endblock %}

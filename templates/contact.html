@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Contact - Joe's Portfolio{% endblock %}
+
+{% block content %}
+<h1>Contact</h1>
+
+<div class="contact-section">
+    <div class="contact-row">
+        <span class="contact-label">Phone:</span>
+        <span>618-363-2382</span>
+    </div>
+
+    <div class="contact-row">
+        <span class="contact-label">Email:</span>
+        <a class="contact-link" href="mailto:jrwiegs@gmail.com">jrwiegs@gmail.com</a>
+    </div>
+
+    <div class="contact-row">
+        <span class="contact-label">LinkedIn:</span>
+        <img src="{{ url_for('static', filename='images/LinkedIn_Logo.png') }}" alt="LinkedIn" class="contact-icon">
+        <a class="contact-link" href="https://www.linkedin.com/in/jrwiegs/" target="_blank">/in/jrwiegs</a>
+    </div>
+
+    <div class="contact-row">
+        <span class="contact-label">GitHub:</span>
+        <img src="{{ url_for('static', filename='images/GitHub_logo.png') }}" alt="GitHub" class="contact-icon">
+        <a class="contact-link" href="https://github.com/select-joe-from-wiegs/joe_portfolio" target="_blank">joe_portfolio</a>
+    </div>
+</div>
+{% endblock %}

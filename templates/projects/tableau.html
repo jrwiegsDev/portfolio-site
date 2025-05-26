@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Tableau Projects - Joe's Portfolio{% endblock %}
+
+{% block content %}
+    <h1>Tableau Projects</h1>
+    <div class="project-card">
+    <img src="{{ url_for('static', filename='images/british_airways_reviews.png') }}" alt="British Airways Tableau Dashboard" class="project-image">
+
+    <h2>British Airways Reviews Dashboard</h2>
+
+    <p><strong>Goal:</strong> Analyze British Airways customer reviews to uncover insights into passenger satisfaction and identify areas for service improvement.</p>
+
+    <p><strong>Skills Used:</strong> Tableau, data connection and preparation, calculated fields, heat maps, bar charts, and interactive dashboard design.</p>
+
+    <p><a href="https://public.tableau.com/app/profile/joe.wiegert/viz/British_Airways_Reviews_17433707890850/Dashboard1" target="_blank">View Interactive Dashboard on Tableau Public</a></p>
+</div>
+
+{% endblock %}

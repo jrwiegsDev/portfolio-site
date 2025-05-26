@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Python Projects - Joe's Portfolio{% endblock %}
+
+{% block content %}
+<h1>Python Projects</h1>
+
+<!-- Project 1 -->
+<div class="project-card">
+    <img src="{{ url_for('static', filename='images/python_project_web_scraper.png') }}" alt="Web Scraper Project" class="project-image">
+    <h2>Automated Web Scraper</h2>
+    <p><strong>Goal:</strong> Extract live cryptocurrency data using <code>requests</code>, <code>BeautifulSoup</code>, and store the results in a structured DataFrame.</p>
+    <p><a href="https://github.com/select-joe-from-wiegs/joe_portfolio/blob/main/python/Project_Automated_Web_Scraper.ipynb" target="_blank">View Notebook on GitHub</a></p>
+</div>
+
+<!-- Project 2 -->
+<div class="project-card">
+    <img src="{{ url_for('static', filename='images/python_project_file_sorter.png') }}" alt="File Sorter Project" class="project-image">
+    <h2>Automatic File Sorter</h2>
+    <p><strong>Goal:</strong> Organize and sort files in a folder based on file type using <code>os</code>, <code>shutil</code>, and Python automation.</p>
+    <p><a href="https://github.com/select-joe-from-wiegs/joe_portfolio/blob/main/python/Project_Automatic_File_Sorter.ipynb" target="_blank">View Notebook on GitHub</a></p>
+</div>
+
+<!-- Project 3 -->
+<div class="project-card">
+    <img src="{{ url_for('static', filename='images/python_project_calculator.png') }}" alt="Calculator Project" class="project-image">
+    <h2>Calculator</h2>
+    <p><strong>Goal:</strong> A beginner-friendly CLI calculator that handles basic arithmetic operations with input validation.</p>
+    <p><a href="https://github.com/select-joe-from-wiegs/joe_portfolio/blob/main/python/Project_Calculator.ipynb" target="_blank">View Notebook on GitHub</a></p>
+</div>
+
+<!-- Project 4 -->
+<div class="project-card">
+    <img src="{{ url_for('static', filename='images/python_project_unit_converter.png') }}" alt="Unit Converter Project" class="project-image">
+    <h2>Unit of Measurement Converter</h2>
+    <p><strong>Goal:</strong> Convert between units like length, weight, and temperature using reusable functions and clean user input.</p>
+    <p><a href="https://github.com/select-joe-from-wiegs/joe_portfolio/blob/main/python/Project_Unit_of_Measurement_Converter.ipynb" target="_blank">View Notebook on GitHub</a></p>
+</div>
+
+<!-- Project 5 -->
+<div class="project-card">
+    <img src="{{ url_for('static', filename='images/python_project_web_scraper_regex_pandas.png') }}" alt="Web Scraping + Regex + Pandas Project" class="project-image">
+    <h2>Web Scraping + Regex + Pandas</h2>
+    <p><strong>Goal:</strong> Scrape sample HTML data, apply regex patterns for cleaning, and analyze results with pandas.</p>
+    <p><a href="https://github.com/select-joe-from-wiegs/joe_portfolio/blob/main/python/Project_Web_Scraping_Regex_Pandas.ipynb" target="_blank">View Notebook on GitHub</a></p>
+</div>
+{% endblock %}

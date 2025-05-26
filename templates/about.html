@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}About - Joe's Portfolio{% endblock %}
+
+{% block content %}
+    <h1>About Me</h1>
+
+    <div style="display: flex; align-items: flex-start; gap: 20px;">
+        <img src="{{ url_for('static', filename='images/Me_Sunglasses.jpg') }}" alt="Joe in sunglasses" style="max-width: 200px; border-radius: 10px; box-shadow: 0 0 10px #000;">
+
+        <div>
+            <p>Hello! I’m Joe, and I’m a <strong>healthcare auditor</strong> and <strong>self-taught data analyst</strong> who’s spent months building portfolio projects and strengthening my skills in <strong>Python, SQL, Excel, and Tableau</strong>.</p>
+
+            <p>With a background in <strong>engineering, project coordination, quality review, and political research</strong>, I’ve developed a burning passion for digging into data, uncovering insights, and turning complex information into something clear and actionable.</p>
+
+            <p>I’m now ready to bring that energy, experience, and enthusiasm into my next role as a <strong>data analyst and developer</strong>, and I’m excited to make an impact!</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <h2>A History</h2>
+
+    <div style="display: flex; align-items: flex-start; gap: 20px;">
+        <img src="{{ url_for('static', filename='images/Me_No_Sunglasses.jpg') }}" alt="Joe no sunglasses" style="max-width: 200px; border-radius: 10px; box-shadow: 0 0 10px #000;">
+
+        <div>
+            <p>After earning my <strong>Bachelor’s in Civil Engineering</strong> from <strong>SIUE</strong> in <strong>2019</strong>, I started out in <strong>engineering and project coordination</strong> roles where I developed a sharp eye for <strong>process, research, and data</strong>. I was later impacted by COVID-related cuts, and family needs brought me back to Illinois.</p>
+
+            <p>In the years since, I’ve pivoted into roles that refined my <strong>analytical, organizational, and support skills</strong> — from <strong>customer support analytics</strong> at <strong>Amplify</strong> to my current position as a <strong>Patient Case Auditor</strong> at <strong>ApexNetwork Physical Therapy</strong>, where I manage large volumes of data with over <strong>99% accuracy</strong>.</p>
+
+            <p>In <strong>2024</strong>, I interned with <strong>Relentless</strong> during the election cycle, working directly with <strong>voter files</strong> and <strong>polling data</strong> to support digital organizing efforts. That experience reignited my passion for meaningful data work and inspired me to double down on growing my technical skills.</p>
+
+            <p>Over the past several months, I’ve built up a strong foundation in <strong>Python, SQL, Excel, and Tableau</strong> through portfolio projects, independent study, and lots of messy Jupyter Notebooks. Now, I’m looking ahead to my next chapter: stepping fully into a <strong>data analyst</strong> role where I can apply my skills, solve real-world problems, and keep growing in an environment that values <strong>insight, integrity, and impact</strong>.</p>
+        </div>
+    </div>
+{% endblock %}
