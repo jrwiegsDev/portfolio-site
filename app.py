@@ -28,6 +28,15 @@ def contact():
 def projects_python():
     return render_template("projects/python.html")
 
+@app.route("/projects/python/skills")
+def python_skills():
+    return render_template("projects/python_practice_skills.html")
+
+@app.route("/projects/python/professional")
+def python_professional():
+    return render_template("projects/python_professional.html")
+
+
 @app.route("/projects/sql")
 def projects_sql():
     return render_template("projects/sql.html")

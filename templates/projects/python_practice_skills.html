@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Python Practice / Skills Projects - Joe's Portfolio{% endblock %}
+
+{% block content %}
+<h1>Python Practice / Skills Projects</h1>
+
+<div class="project-grid">
+
+    <!-- Project 1 -->
+    <div class="project-card">
+        <img src="{{ url_for('static', filename='images/python_project_file_sorter.png') }}" alt="File Sorter Project" class="project-image">
+        <h2>Automatic File Sorter</h2>
+        <p><strong>Goal:</strong> Organize and sort files in a folder based on file type using os, shutil, and Python automation.</p>
+        <p><a href="https://github.com/select-joe-from-wiegs/joe_portfolio/blob/main/python/Project_Automatic_File_Sorter.ipynb" target="_blank">View Notebook on GitHub</a></p>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+        <img src="{{ url_for('static', filename='images/python_project_calculator.png') }}" alt="Calculator Project" class="project-image">
+        <h2>Calculator</h2>
+        <p><strong>Goal:</strong> A beginner-friendly CLI calculator that handles basic arithmetic operations with input validation.</p>
+        <p><a href="https://github.com/select-joe-from-wiegs/joe_portfolio/blob/main/python/Project_Calculator.ipynb" target="_blank">View Notebook on GitHub</a></p>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card">
+        <img src="{{ url_for('static', filename='images/python_project_unit_converter.png') }}" alt="Unit Converter Project" class="project-image">
+        <h2>Unit of Measurement Converter</h2>
+        <p><strong>Goal:</strong> Convert between units like length, weight, and temperature using reusable functions and clean user input.</p>
+        <p><a href="https://github.com/select-joe-from-wiegs/joe_portfolio/blob/main/python/Project_Unit_of_Measurement_Converter.ipynb" target="_blank">View Notebook on GitHub</a></p>
+    </div>
+
+</div>
+{% endblock %}

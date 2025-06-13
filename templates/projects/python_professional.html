@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Python Professional Projects - Joe's Portfolio{% endblock %}
+
+{% block content %}
+<h1>Python Professional Projects</h1>
+
+<div class="project-grid">
+
+    <!-- Project 1 - Parole Simulator FIRST -->
+    <div class="project-card">
+        <img src="{{ url_for('static', filename='images/python_project_parole_sim.png') }}" alt="Dynamic Parole Recommendation Simulator Project" class="project-image">
+        <h2>Dynamic Parole Recommendation Simulator</h2>
+        <p><strong>Goal:</strong> Simulate 500 parole cases to analyze how adding dynamic variables changes release recommendations. This project explores responsible data-driven policy modeling using pandas and matplotlib.</p>
+        <p><a href="https://github.com/select-joe-from-wiegs/joe_portfolio/blob/main/python/Project_Dynamic-Parole-Recommendation-Simulator.ipynb" target="_blank">View Notebook on GitHub</a></p>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+        <img src="{{ url_for('static', filename='images/python_project_web_scraper.png') }}" alt="Web Scraper Project" class="project-image">
+        <h2>Automated Web Scraper</h2>
+        <p><strong>Goal:</strong> Extract live cryptocurrency data using requests, BeautifulSoup, and store the results in a structured DataFrame.</p>
+        <p><a href="https://github.com/select-joe-from-wiegs/joe_portfolio/blob/main/python/Project_Automated_Web_Scraper.ipynb" target="_blank">View Notebook on GitHub</a></p>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card">
+        <img src="{{ url_for('static', filename='images/python_project_web_scraper_regex_pandas.png') }}" alt="Web Scraping + Regex + Pandas Project" class="project-image">
+        <h2>Web Scraping + Regex + Pandas</h2>
+        <p><strong>Goal:</strong> Scrape sample HTML data, apply regex patterns for cleaning, and analyze results with pandas.</p>
+        <p><a href="https://github.com/select-joe-from-wiegs/joe_portfolio/blob/main/python/Project_Web_Scraping_Regex_Pandas.ipynb" target="_blank">View Notebook on GitHub</a></p>
+    </div>
+
+</div>
+{% endblock %}

@@ -7,9 +7,9 @@
         <h1>Welcome!</h1>
         <div class="intro-section">
             <div class="image-hover-container headshot">
-    <img src="{{ url_for('static', filename='images/Me_Headshot.JPG') }}" alt="Headshot">
-    <div class="image-hover-text">Headshot</div>
-</div>
+                <img src="{{ url_for('static', filename='images/Me_Headshot.JPG') }}" alt="Headshot">
+                <div class="image-hover-text">Headshot</div>
+            </div>
             <div class="intro-text">
                 <p>I’m a Patient Case Auditor by day, and a curious Data Enthusiast by night.</p>
                 <p>I play piano by ear, and I love going on adventures with<br>
@@ -21,8 +21,8 @@
             </div>
         </div>
 
-        <!-- Collage Section -->
-        <div class="photo-collage">
+<!-- Collage Section -->
+<div class="photo-collage">
 
     <div class="image-hover-container">
         <img src="{{ url_for('static', filename='images/daisy_and_milo.jpg') }}" alt="Daisy and Milo!">
@@ -49,6 +49,63 @@
         <div class="image-hover-text">I get my musical talent from my dad, and we love to jam out together!</div>
     </div>
 
+    <!-- NEW IMAGES BELOW -->
+
+    <div class="image-hover-container">
+        <img src="{{ url_for('static', filename='images/Daisy_Milo.jpg') }}" alt="Daisy and Milo LOVE being outside!!!">
+        <div class="image-hover-text">Daisy and Milo LOVE being outside!!!</div>
+    </div>
+
+    <div class="image-hover-container">
+        <img src="{{ url_for('static', filename='images/Daisy_Milo_2.jpg') }}" alt="Milo always has to be near his sister Daisy...">
+        <div class="image-hover-text">Milo always has to be near his sister Daisy...</div>
+    </div>
+
+    <div class="image-hover-container">
+        <img src="{{ url_for('static', filename='images/Me_Josh_Fishing.JPG') }}" alt="We love going to different parks nearby to fish in different spots!">
+        <div class="image-hover-text">We love going to different parks nearby to fish in different spots!</div>
+    </div>
+
+    <div class="image-hover-container">
+        <img src="{{ url_for('static', filename='images/Me_Josh_Fishing_2.JPG') }}" alt="I promise we do actually catch fish and don't just pose for pictures near water...">
+        <div class="image-hover-text">I promise we do actually catch fish and don't just pose for pictures near water...</div>
+    </div>
+
+    <div class="image-hover-container">
+        <img src="{{ url_for('static', filename='images/Me_Josh_Zoo.JPG') }}" alt="We also LOVE going to the Zoo!">
+        <div class="image-hover-text">We also LOVE going to the Zoo!</div>
+    </div>
+
 </div>
+
+<!-- Add imagesLoaded before your script -->
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const collage = document.querySelector('.photo-collage');
+        const images = Array.from(collage.children);
+
+        // Shuffle the array
+        for (let i = images.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [images[i], images[j]] = [images[j], images[i]];
+        }
+
+        // Re-append the images in new order
+        images.forEach(img => collage.appendChild(img));
+
+        // Wait until images are fully loaded, THEN initialize Masonry
+        imagesLoaded(collage, function() {
+            new Masonry(collage, {
+                itemSelector: '.image-hover-container',
+                columnWidth: '.image-hover-container',
+                percentPosition: true,
+                gutter: 10
+            });
+        });
+    });
+</script>
 
 {% endblock %}

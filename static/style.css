@@ -143,8 +143,8 @@ nav {
 }
 
 .tool-button:hover {
-    background-color: #FFD700;
-    color: #000;
+    background-color: rgba(255, 230, 80, 0.85); /* BRIGHTER yellow */
+    color: #339CFF;
     transform: scale(1.05);
 }
 
@@ -206,10 +206,11 @@ nav {
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    gap: 1.25rem;
-    margin-top: 2.5rem;
-    padding: 0 1rem;
+    gap: 1.25rem; /* Keep your gap for fallback */
+    margin-top: 2rem;
+    padding: 0; /* Remove extra padding so Masonry aligns better */
 }
+
 
 .collage-image {
     width: 260px;
@@ -283,7 +284,10 @@ body.projects-page {
     display: inline-block;
     overflow: hidden;
     border-radius: 12px;
+    margin-bottom: 10px;
+    box-sizing: border-box; /* Add this for consistent sizing */
 }
+
 
 .image-hover-container img {
     display: block;
@@ -396,5 +400,89 @@ body.projects-page {
 
     .contact-section {
         width: 95%;
+    }
+}
+
+/* ===== Folder Buttons for Sub-Project Landing Pages ===== */
+.project-folder-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.folder-button {
+    padding: 18px 32px;
+    font-size: 1.3rem;
+    background-color: #333;
+    border: 1px solid #555;
+    color: #fff;
+    font-weight: bold; /* KEEP bold */
+    border-radius: 6px;
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    display: inline-block;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    letter-spacing: 0.6px;
+    line-height: 1.5;
+}
+
+.folder-button:hover {
+    background-color: rgba(255, 230, 80, 0.85); /* BRIGHTER yellow */
+    color: #339CFF; /* Nice blue */
+    transform: scale(1.05);
+}
+
+/* ===== Project Grid Layout ===== */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.project-card {
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+}
+
+.project-image {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+.photo-collage {
+    margin-top: 2rem;
+}
+
+.image-hover-container {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .photo-collage {
+        padding: 0; /* Ensure clean edges on small screens */
+    }
+
+    .image-hover-container img {
+        max-width: 220px; /* Slightly smaller images on small screens */
     }
 }

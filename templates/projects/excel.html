@@ -4,15 +4,21 @@
 
 {% block content %}
     <h1>Excel Projects</h1>
-    <div class="project-card">
-        <img src="{{ url_for('static', filename='images/Excel_Screenshot.png') }}" alt="Excel Coffee Dashboard" class="project-image">
 
-        <h2>Coffee Orders Dashboard</h2>
+    <div class="project-grid">
 
-        <p><strong>Goal:</strong> Build an interactive Excel dashboard to explore trends in coffee orders and practice turning raw data into something useful and visual.</p>
+        <div class="project-card">
+            <img src="{{ url_for('static', filename='images/Excel_Screenshot.png') }}" alt="Excel Coffee Dashboard" class="project-image">
 
-        <p><strong>Excel Skills:</strong> Data cleaning, pivot tables, formulas like <code>INDEX-MATCH</code>, and dashboard design to make the insights easy to explore and understand.</p>
+            <h2>Coffee Orders Dashboard</h2>
 
-        <p><a href="{{ url_for('static', filename='Coffee_Orders_Portfolio.xlsx') }}" download>Download Coffee Orders Dashboard (.xlsx)</a></p>
+            <p><strong>Goal:</strong> Build an interactive Excel dashboard to explore trends in coffee orders and practice turning raw data into something useful and visual.</p>
+
+            <p><strong>Excel Skills:</strong> Data cleaning, pivot tables, formulas like INDEX-MATCH, and dashboard design to make the insights easy to explore and understand.</p>
+
+            <p><a href="{{ url_for('static', filename='Coffee_Orders_Portfolio.xlsx') }}" download>Download Coffee Orders Dashboard (.xlsx)</a></p>
+        </div>
+
     </div>
+
 {% endblock %}
