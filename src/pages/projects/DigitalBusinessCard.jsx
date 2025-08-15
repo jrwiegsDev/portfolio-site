@@ -1,12 +1,38 @@
-import React from 'react';
-import './DigitalBusinessCard.css'; // Import the dedicated CSS file
+import React, { useState } from 'react';
+import './DigitalBusinessCard.css';
 
 function DigitalBusinessCard() {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState('');
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({ ...prevState, [name]: value }));
+  };
   
-  // A simple handler for the form submission
-  const handleSubmit = (event) => {
-    event.preventDefault(); // Prevents the page from reloading
-    alert("Thank you for your message!"); // Placeholder action
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setStatus('Sending...');
+
+    try {
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus('Message sent successfully!');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setStatus('Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setStatus('An error occurred. Please try again.');
+    }
   };
 
   return (
@@ -19,7 +45,6 @@ function DigitalBusinessCard() {
         />
         <h1>Joe Wiegert</h1>
         <h3>Junior Full-Stack Developer</h3>
-
         <div className="db-action-buttons">
           <a 
             href="/Joe_Wiegert_Resume.pdf"
@@ -37,7 +62,6 @@ function DigitalBusinessCard() {
             View GitHub
           </a>
         </div>
-
         <div className="db-skills-section">
           <h4>Full-Stack Skills</h4>
           <ul className="db-skills-list">
@@ -50,15 +74,34 @@ function DigitalBusinessCard() {
             <li className="db-skill-item">REST APIs</li>
           </ul>
         </div>
-
         <form className="db-contact-form" onSubmit={handleSubmit}>
           <h4>Contact Me</h4>
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
-          <textarea placeholder="Your Message" required></textarea>
+          <input 
+            type="text" 
+            name="name" 
+            placeholder="Your Name" 
+            value={formData.name}
+            onChange={handleChange}
+            required 
+          />
+          <input 
+            type="email" 
+            name="email" 
+            placeholder="Your Email" 
+            value={formData.email}
+            onChange={handleChange}
+            required 
+          />
+          <textarea 
+            name="message" 
+            placeholder="Your Message" 
+            value={formData.message}
+            onChange={handleChange}
+            required
+          ></textarea>
           <button type="submit">Send Message</button>
+          {status && <p style={{ textAlign: 'center', marginTop: '1rem' }}>{status}</p>}
         </form>
-
       </div>
     </div>
   );
