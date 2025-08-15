@@ -1,0 +1,360 @@
+body {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0 1.5rem;
+}
+
+h1 {
+    color: #FFD343;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+h2 {
+    color: #FFD343;
+}
+
+a {
+    color: #4EA1FF;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #80C4FF;
+    text-decoration: underline;
+}
+
+nav {
+    background-color: #2a2a2a;
+    padding: 1.2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: #f0f0f0;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.1s ease;
+}
+
+.nav-links a:hover {
+    color: #3776AB;
+}
+
+.nav-links span {
+    color: #ccc;
+    font-size: 1.4rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.home-container {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+.intro-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.headshot {
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.intro-text {
+    flex: 1;
+    line-height: 1.6;
+}
+
+.photo-collage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 2rem;
+    padding: 0;
+}
+
+.collage-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: contain;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+    background-color: #1e1e1e;
+}
+
+.collage-image:hover {
+    transform: scale(1.06);
+}
+
+.image-hover-container {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.image-hover-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.image-hover-container:hover img {
+    transform: scale(1.03);
+    opacity: 0.5;
+}
+
+.image-hover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    padding: 0.4rem 0.75rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    max-width: 90%;
+}
+
+.image-hover-container:hover .image-hover-text {
+    opacity: 1;
+}
+
+.image-hover-container.headshot img {
+    max-width: 300px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.project-card {
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+}
+
+.project-image {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+.project-button {
+    padding: 14px 28px;
+    background-color: #333;
+    color: #f5f5f5;
+    border: 2px solid #555;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.project-button:hover {
+    background-color: #FFD343;
+    color: #000;
+    transform: scale(1.05);
+    border-color: #FFD343;
+}
+
+.tool-buttons {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.tool-button {
+    padding: 16px 32px;
+    font-size: 1.2rem;
+    background-color: #333;
+    border: 1px solid #555;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.tool-button:hover {
+    background-color: rgba(255, 230, 80, 0.85);
+    color: #339CFF;
+    transform: scale(1.05);
+}
+
+.contact-section {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem 3rem;
+    background-color: #2a2a2a;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    font-size: 1.3rem;
+    line-height: 1.9;
+}
+
+.contact-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-label {
+    font-weight: bold;
+    color: #f0f0f0;
+    min-width: 100px;
+    font-size: 1.3rem;
+}
+
+.contact-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+}
+
+.contact-link {
+    color: #4ea1ff;
+    font-size: 1.3rem;
+    text-decoration: none;
+    font-weight: 500;
+    word-break: break-word;
+}
+
+.contact-link:hover {
+    color: #81d4fa;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+    }
+    
+    .image-hover-container img,
+    .collage-image,
+    .headshot {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .image-hover-text {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.6rem;
+    }
+
+    .intro-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    body,
+    .contact-section {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+    
+    .tool-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .tool-button {
+        width: 100%;
+        text-align: center;
+        font-size: 1rem;
+        padding: 12px 24px;
+    }
+    
+    .contact-section {
+        width: 95%;
+    }
+}
+
+/* Masonry Grid Styles */
+.my-masonry-grid {
+    display: flex;
+    margin-left: -5px; /* gutter size offset */
+    width: auto;
+}
+.my-masonry-grid_column {
+    padding-left: 5px; /* gutter size */
+    background-clip: padding-box;
+}
+
+.my-masonry-grid_column > div {
+    margin-bottom: 5px;
+}
