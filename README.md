@@ -1,12 +1,27 @@
-# React + Vite
+# Portfolio Website (React Version)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the source code for my personal portfolio website, rebuilt from the ground up using a modern JavaScript tech stack.
 
-Currently, two official plugins are available:
+## Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is a complete rebuild of my original portfolio site, which was initially created with Python and Flask. After completing a full-stack development course, I decided to re-engineer the entire site to better showcase my current skills and create a codebase that is easier for me to maintain and expand upon.
 
-## Expanding the ESLint configuration
+The goal was to create a clean, responsive, and performant single-page application that effectively displays my projects, skills, and professional journey.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+This website was built with the following technologies:
+
+* **Front-End:**
+    * **React:** For building the user interface with a component-based architecture.
+    * **Vite:** As the build tool for a fast and modern development experience.
+    * **React Router:** For client-side routing to create a seamless single-page application.
+    * **HTML5 & CSS3:** For structure and styling.
+
+* **Back-End (Future Development):**
+    * **Node.js & Express:** Planned for building a RESTful API to handle features like a functional contact form.
+    * **MongoDB:** Planned for database management to store project data or blog posts.
+
+* **Deployment:**
+    * **Git & GitHub:** For version control.
+    * **Render:** For continuous deployment and hosting.
