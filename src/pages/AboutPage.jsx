@@ -1,0 +1,62 @@
+import React from 'react';
+
+function AboutPage() {
+  // We'll define the style object here to keep the JSX clean
+  const sectionStyle = {
+    display: 'flex',
+    alignItems: 'flex-start',
+    gap: '20px',
+  };
+
+  const imageContainerStyle = {
+    maxWidth: '200px',
+    borderRadius: '10px',
+    boxShadow: '0 0 10px #000',
+  };
+
+  return (
+    <div className="home-container">
+      <h1>About Me</h1>
+
+      <div style={sectionStyle}>
+        <div className="image-hover-container" style={imageContainerStyle}>
+          <img src="/Me_Sunglasses.jpg" alt="Joe Cool... or so I've heard" />
+          <div className="image-hover-text">Joe Cool... or so I've heard</div>
+        </div>
+
+        <div>
+          <p>Hello! I’m Joe, and I’m a healthcare auditor and self-taught junior developer who’s spent<br />
+            months building portfolio projects and strengthening my skills in <strong>HTML, CSS, JavaScript, Python, SQL, Excel, and Tableau</strong>.</p>
+          <p>With a background in engineering, project coordination, quality review, and political research,<br />
+            I’ve developed a burning passion for digging into data, uncovering insights, and turning<br />
+            complex information into something clear, useful, and actionable.</p>
+          <p>I’m ready to bring that enthusiasm for data, experience with hands-on projects, and hunger to learn more<br />
+            into my next role as a <strong>software developer/engineer</strong>, and I’m excited to make a positive impact!</p>
+        </div>
+      </div>
+
+      <hr />
+
+      <h2>A History</h2>
+
+      <div style={sectionStyle}>
+        <div className="image-hover-container" style={imageContainerStyle}>
+          <img src="/Me_No_Sunglasses.jpg" alt="Pro tip: do not look directly at the sun." />
+          <div className="image-hover-text">Pro tip: do not look directly at the sun.</div>
+        </div>
+
+        <div>
+          <p>After earning my <strong>Bachelor’s in Civil Engineering</strong> from SIUE in 2019, I started out in<br />
+            <strong>engineering and project coordination</strong> roles where I developed a sharp eye for <strong>process, research, and data</strong>.<br />
+            I was later impacted by COVID-related cuts, and family needs brought me back to Illinois.</p>
+          <p>In the years since, I’ve pivoted into roles that refined my <strong>analytical, organizational, and support skills</strong>,<br />
+            from customer support analytics at Amplify to my current position as a Patient Case Auditor at ApexNetwork Physical Therapy,<br />
+            where I manage large volumes of data with over <strong>99% accuracy</strong>.</p>
+          <p>In 2024, I interned with Relentless during the election cycle, working directly with voter files and polling data to support digital organizing efforts. That experience reignited my passion for meaningful data work and inspired me to double down on growing my technical skills. Over the past several months, I’ve built up a strong foundation in <strong>HTML, CSS, JavaScript, Python, SQL, Excel, and Tableau</strong> through portfolio projects, independent study, and lots of messy Jupyter Notebooks. Now, I’m looking ahead to my next chapter: stepping fully into a software developer/engineer role where I can apply my skills, solve real-world problems, and keep growing in an environment that values curiosity, insight, and determination.</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default AboutPage;
