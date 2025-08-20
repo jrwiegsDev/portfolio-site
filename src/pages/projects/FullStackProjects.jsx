@@ -8,15 +8,26 @@ function FullStackProjects() {
       <p>Welcome to my full-stack projects! Here you'll find projects that combine front-end and back-end technologies to create functional web applications.</p>
       <div className="project-grid">
 
+        {/* Harry Potter API App Card */}
+        <ProjectCard
+          imageSrc="/hp-api-app.png"
+          imageAlt="Harry Potter API App Project"
+          title="Harry Potter Character & Spell Finder"
+          linkUrl="https://hp-api-app.onrender.com"
+          linkText="View Live Project"
+        >
+          <p><strong>Goal:</strong> A dynamic single-page application built with React that fetches and displays data from the Harry Potter API, featuring real-time search and filtering capabilities. Plus a fun wand cursor with effects!</p>
+        </ProjectCard>
+
         {/* Naruto API App Card */}
         <ProjectCard
           imageSrc="/naruto-api-app.png"
           imageAlt="Naruto API App Project"
           title="Naruto Character API App"
-          linkUrl="https://naruto-api-app.onrender.com" // <-- IMPORTANT: Replace this with your live Naruto app's URL from Render
+          linkUrl="https://naruto-api-app-g29x.onrender.com/"
           linkText="View Live Project"
         >
-          <p><strong>Goal:</strong> A dynamic web application that fetches and displays character data from a Naruto API, built with React and Node.js.</p>
+          <p><strong>Goal:</strong> A responsive web application that fetches and displays character data from a public Naruto API, built using React and Node.js.</p>
         </ProjectCard>
 
         {/* Digital Business Card Card */}
@@ -25,9 +36,9 @@ function FullStackProjects() {
           imageAlt="Digital Business Card Project"
           title="Digital Business Card"
           linkUrl="/projects/digital-business-card"
-          linkText="View Live Project"
+          linkText="View This Project's Page"
         >
-          <p><strong>Goal:</strong> A responsive digital business card built with HTML and CSS, featuring a functional back-end contact form.</p>
+          <p><strong>Goal:</strong> A responsive digital business card featuring a functional back-end contact form built with Node.js and Express.</p>
         </ProjectCard>
         
       </div>
