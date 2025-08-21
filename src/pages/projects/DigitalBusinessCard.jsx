@@ -45,7 +45,7 @@ function DigitalBusinessCard() {
           className="db-card-headshot" 
         />
         <h1>Joe Wiegert</h1>
-        <h3>Junior Full-Stack Developer</h3>
+        <h3>Software Engineer</h3>
         <div className="db-action-buttons">
           <a 
             href="/Joe_Wiegert_Resume.pdf"
