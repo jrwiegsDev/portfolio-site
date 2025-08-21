@@ -35,7 +35,6 @@ const router = createBrowserRouter([
           { path: 'tableau', element: <TableauProjects /> },
         ],
       },
-      // Add a new, separate route for the business card project
       { path: 'projects/digital-business-card', element: <DigitalBusinessCard /> },
       { path: 'contact', element: <ContactPage /> },
     ],

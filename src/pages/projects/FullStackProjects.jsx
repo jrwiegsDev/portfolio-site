@@ -24,7 +24,7 @@ function FullStackProjects() {
           imageSrc="/naruto-api-app.png"
           imageAlt="Naruto API App Project"
           title="Naruto Character API App"
-          linkUrl="https://naruto-api-app-g29x.onrender.com/"
+          linkUrl="https://naruto-api-app.onrender.com"
           linkText="View Live Project"
         >
           <p><strong>Goal:</strong> A responsive web application that fetches and displays character data from a public Naruto API, built using React and Node.js.</p>

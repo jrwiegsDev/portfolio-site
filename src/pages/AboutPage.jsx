@@ -1,7 +1,6 @@
 import React from 'react';
 
 function AboutPage() {
-  // We'll define the style object here to keep the JSX clean
   const sectionStyle = {
     display: 'flex',
     alignItems: 'flex-start',
@@ -25,7 +24,7 @@ function AboutPage() {
         </div>
 
         <div>
-          <p>Hello! I’m Joe, and I’m a healthcare auditor and self-taught junior developer who’s spent<br />
+          <p>Hello! I’m Joe, and I’m a healthcare auditor and self-taught software engineer who’s spent<br />
             months building portfolio projects and strengthening my skills in <strong>HTML, CSS, JavaScript, Python, SQL, Excel, and Tableau</strong>.</p>
           <p>With a background in engineering, project coordination, quality review, and political research,<br />
             I’ve developed a burning passion for digging into data, uncovering insights, and turning<br />
