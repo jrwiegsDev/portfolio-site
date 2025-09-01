@@ -1,5 +1,4 @@
 import ProjectCard from '../../components/ProjectCard';
-import { Link } from 'react-router-dom';
 
 function FullStackProjects() {
   return (
@@ -8,7 +7,16 @@ function FullStackProjects() {
       <p>Welcome to my full-stack projects! Here you'll find projects that combine front-end and back-end technologies to create functional web applications.</p>
       <div className="project-grid">
 
-        {/* Markdown Previewer Project Card */}
+        <ProjectCard
+          imageSrc="/survey-app.png"
+          imageAlt="Survey & Polling App"
+          title="Survey & Polling App"
+          linkUrl="https://survey-app-zuvw.onrender.com"
+          linkText="View Live Project"
+        >
+          <p><strong>Goal:</strong> A full-stack polling application where users can vote on various topics and see the results update instantly. Built with a React front-end, a Node.js/Express back-end, and a MongoDB database.</p>
+        </ProjectCard>
+
         <ProjectCard
           imageSrc="/markdown-previewer.png"
           imageAlt="Markdown Previewer Project"
@@ -19,7 +27,6 @@ function FullStackProjects() {
           <p><strong>Goal:</strong> A real-time Markdown editor built with React. Users can type Markdown in a text area and see the formatted HTML output rendered instantly on the page.</p>
         </ProjectCard>
 
-        {/* Harry Potter API App Card */}
         <ProjectCard
           imageSrc="/hp-api-app.png"
           imageAlt="Harry Potter API App Project"
@@ -30,18 +37,16 @@ function FullStackProjects() {
           <p><strong>Goal:</strong> A dynamic single-page application that fetches and displays data from the Harry Potter API, featuring real-time search, filtering, and a custom magic wand cursor effect.</p>
         </ProjectCard>
 
-        {/* Naruto API App Card */}
         <ProjectCard
           imageSrc="/naruto-api-app.png"
           imageAlt="Naruto API App Project"
           title="Naruto Character API App"
-          linkUrl="https://naruto-api-app.onrender.com/"
+          linkUrl="https://naruto-api-app.onrender.com"
           linkText="View Live Project"
         >
           <p><strong>Goal:</strong> A responsive web application that fetches and displays character data from a public Naruto API, built using React and Node.js.</p>
         </ProjectCard>
 
-        {/* Digital Business Card Card */}
         <ProjectCard
           imageSrc="/digitalBusinessCard.png"
           imageAlt="Digital Business Card Project"
