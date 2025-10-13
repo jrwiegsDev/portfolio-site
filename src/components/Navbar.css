@@ -1,0 +1,39 @@
+nav {
+  background-color: var(--surface);
+  padding: 1.5rem; /* Increased padding for a more substantial feel */
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid var(--background);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* Increased space between links */
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  font-weight: bold;
+  font-size: 1.25rem; /* Made the font larger */
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent; /* Prepare for a cool hover effect */
+}
+
+.nav-links a:hover {
+  color: var(--primary-accent); /* Use the vibrant teal on hover */
+  text-decoration: none; /* Remove underline from global styles */
+  border-bottom: 2px solid var(--primary-accent); /* Underline with color */
+}
+
+/* Style for the separator */
+.nav-links span {
+  color: var(--text-secondary);
+  font-size: 1.25rem;
+  line-height: 1;
+}

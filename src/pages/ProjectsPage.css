@@ -1,0 +1,77 @@
+/* Container for the filter buttons */
+.tool-buttons {
+  margin: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Styling for each individual button */
+.tool-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: var(--surface);
+  border: 2px solid var(--surface);
+  color: var(--text-secondary);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.tool-button:hover {
+  background-color: var(--primary-accent);
+  color: var(--background);
+  border-color: var(--primary-accent);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* Grid layout for the project cards */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Styling for each project card */
+.project-card {
+  background-color: var(--surface);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+.project-image {
+  width: 100%;
+  max-height: 200px; /* Control image height */
+  object-fit: contain; /* Ensures image fits without stretching */
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+
+.project-card h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.project-card p {
+  flex-grow: 1; /* Allows paragraph to fill space, pushing link to bottom */
+  color: var(--text-secondary);
+}
+
+.project-card a {
+  font-weight: bold;
+  font-size: 1.1rem;
+}

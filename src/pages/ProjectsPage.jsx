@@ -1,8 +1,9 @@
 import { Link, Outlet } from 'react-router-dom';
+import './ProjectsPage.css'; // <-- Add this import
 
 function ProjectsPage() {
   return (
-    <div className="home-container">
+    <div className="projects-container"> {/* Using a more specific class now */}
       <h1>Projects</h1>
       <p>Here are my projects. Click any of the folders below to see the projects I've done with these respective tools:</p>
 
@@ -16,7 +17,7 @@ function ProjectsPage() {
 
       <hr />
 
-      {/* This Outlet will render the sub-page content */}
+      {/* This Outlet will render the sub-page content (e.g., the project cards) */}
       <Outlet />
 
     </div>
