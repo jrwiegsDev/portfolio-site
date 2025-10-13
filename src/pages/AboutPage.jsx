@@ -1,59 +1,46 @@
 import React from 'react';
+import './AboutPage.css'; // Make sure to import the new CSS file
 
 function AboutPage() {
-  const sectionStyle = {
-    display: 'flex',
-    alignItems: 'flex-start',
-    gap: '20px',
-  };
-
-  const imageContainerStyle = {
-    maxWidth: '200px',
-    borderRadius: '10px',
-    boxShadow: '0 0 10px #000',
-  };
-
   return (
-    <div className="home-container">
+    <div className="about-container">
       <h1>About Me</h1>
-
-      <div style={sectionStyle}>
-        <div className="image-hover-container" style={imageContainerStyle}>
-          <img src="/Me_Sunglasses.jpg" alt="Joe Cool... or so I've heard" />
-          <div className="image-hover-text">Joe Cool... or so I've heard</div>
+      <section className="about-section">
+        <div className="image-container">
+          <img src="/Me_Sunglasses.jpg" alt="Joe wearing sunglasses" />
         </div>
-
-        <div>
-          <p>Hello! I’m Joe, and I’m a healthcare auditor and self-taught software engineer who’s spent<br />
-            months building portfolio projects and strengthening my skills in <strong>HTML, CSS, JavaScript, Python, SQL, Excel, and Tableau</strong>.</p>
-          <p>With a background in engineering, project coordination, quality review, and political research,<br />
-            I’ve developed a burning passion for digging into data, uncovering insights, and turning<br />
-            complex information into something clear, useful, and actionable.</p>
-          <p>I’m ready to bring that enthusiasm for data, experience with hands-on projects, and hunger to learn more<br />
-            into my next role as a <strong>software developer/engineer</strong>, and I’m excited to make a positive impact!</p>
+        <div className="text-container">
+          <p>
+            Hello! I’m Joe, a software engineer with a passion for building intuitive and impactful web applications. My journey has taken me from a background in civil engineering and data analysis to a deep dive into full-stack development.
+          </p>
+          <p>
+            I thrive on turning complex problems into clean, efficient code and have hands-on experience building projects with the <strong>MERN stack (MongoDB, Express.js, React, Node.js)</strong>, alongside a strong foundation in <strong>Python and SQL</strong>.
+          </p>
+          <p>
+            I'm eager to bring my unique blend of analytical thinking and development skills to a team where I can contribute to meaningful projects and continue to grow as an engineer.
+          </p>
         </div>
-      </div>
+      </section>
 
       <hr />
 
       <h2>A History</h2>
-
-      <div style={sectionStyle}>
-        <div className="image-hover-container" style={imageContainerStyle}>
-          <img src="/Me_No_Sunglasses.jpg" alt="Pro tip: do not look directly at the sun." />
-          <div className="image-hover-text">Pro tip: do not look directly at the sun.</div>
+      <section className="about-section">
+        <div className="image-container">
+          <img src="/Me_No_Sunglasses.jpg" alt="Joe not wearing sunglasses" />
         </div>
-
-        <div>
-          <p>After earning my <strong>Bachelor’s in Civil Engineering</strong> from SIUE in 2019, I started out in<br />
-            <strong>engineering and project coordination</strong> roles where I developed a sharp eye for <strong>process, research, and data</strong>.<br />
-            I was later impacted by COVID-related cuts, and family needs brought me back to Illinois.</p>
-          <p>In the years since, I’ve pivoted into roles that refined my <strong>analytical, organizational, and support skills</strong>,<br />
-            from customer support analytics at Amplify to my current position as a Patient Case Auditor at ApexNetwork Physical Therapy,<br />
-            where I manage large volumes of data with over <strong>99% accuracy</strong>.</p>
-          <p>In 2024, I interned with Relentless during the election cycle, working directly with voter files and polling data to support digital organizing efforts. That experience reignited my passion for meaningful data work and inspired me to double down on growing my technical skills. Over the past several months, I’ve built up a strong foundation in <strong>HTML, CSS, JavaScript, Python, SQL, Excel, and Tableau</strong> through portfolio projects, independent study, and lots of messy Jupyter Notebooks. Now, I’m looking ahead to my next chapter: stepping fully into a software developer/engineer role where I can apply my skills, solve real-world problems, and keep growing in an environment that values curiosity, insight, and determination.</p>
+        <div className="text-container">
+          <p>
+            After earning my <strong>Bachelor’s in Civil Engineering</strong>, I began my career in roles that sharpened my eye for <strong>process, research, and data</strong>. When COVID-related cuts shifted my path, I pivoted toward roles that refined my analytical and organizational skills.
+          </p>
+          <p>
+            My work as a Patient Case Auditor involved managing large volumes of data with over <strong>99% accuracy</strong>, while my internship experience with Relentless utilizing voter files and polling data reignited my passion for using technology to facilitate positive change.
+          </p>
+          <p>
+            These experiences inspired me to focus entirely on software development. Most recently, I am currently developing full-stack applications for a political candidates and my local area Democratic Club, putting my skills to practical use. I'm excited to take this next step and join a forward-thinking company as a full-time <strong>software developer/engineer</strong>.
+          </p>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

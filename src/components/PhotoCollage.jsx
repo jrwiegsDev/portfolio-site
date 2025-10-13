@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Masonry from 'react-masonry-css';
 
-// We keep the original image data outside the component
 const initialImageData = [
   { src: '/daisy_and_milo.jpg', alt: 'Daisy and Milo!' },
   { src: '/me_fishing.jpg', alt: 'Me fishing, but I never touch the fish. Joshua does all the hard work.' },
@@ -16,14 +15,12 @@ const initialImageData = [
 ];
 
 function PhotoCollage() {
-  // 1. We use useState to hold the shuffled list of images
   const [shuffledImages, setShuffledImages] = useState([]);
 
-  // 2. We use useEffect to shuffle the images ONCE when the component first loads
   useEffect(() => {
     const shuffled = [...initialImageData].sort(() => 0.5 - Math.random());
     setShuffledImages(shuffled);
-  }, []); // The empty array [] means this effect runs only once
+  }, []);
 
   const breakpointColumnsObj = {
     default: 4,
@@ -33,14 +30,14 @@ function PhotoCollage() {
   };
 
   return (
-    // 3. We use the Masonry component to wrap our images
     <Masonry
       breakpointCols={breakpointColumnsObj}
       className="my-masonry-grid"
       columnClassName="my-masonry-grid_column"
     >
-      {shuffledImages.map((image, index) => (
-        <div className="image-hover-container" key={index}>
+      {/* The only change is using image.src for the key, which is a stable, unique ID */}
+      {shuffledImages.map((image) => (
+        <div className="image-hover-container" key={image.src}>
           <img src={image.src} alt={image.alt} className="collage-image" />
           <div className="image-hover-text">{image.alt}</div>
         </div>

@@ -1,0 +1,15 @@
+/* This file is for the main App component's layout. */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* The <main> element will grow to fill available space */
+.main-content {
+  flex-grow: 1;
+  width: 100%;
+  max-width: 1100px; /* Match the .container width */
+  margin: 0 auto;
+  padding: 2rem 0;
+}
