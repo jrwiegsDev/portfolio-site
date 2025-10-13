@@ -40,7 +40,7 @@ function DigitalBusinessCard() {
     <div className="card-page-container">
       <div className="db-card">
         <img 
-          src="/Me_Sunglasses.jpg" 
+          src="/Me_Sunglasses.png" 
           alt="Joe Wiegert Headshot" 
           className="db-card-headshot" 
         />

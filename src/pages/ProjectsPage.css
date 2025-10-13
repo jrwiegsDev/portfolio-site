@@ -6,25 +6,32 @@
   gap: 1rem;
 }
 
-/* Styling for each individual button */
+/* Base style for the filter buttons */
 .tool-button {
   padding: 10px 20px;
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 600;
+  color: var(--text-secondary);
   background-color: var(--surface);
   border: 2px solid var(--surface);
-  color: var(--text-secondary);
   border-radius: 8px;
   text-decoration: none;
+  cursor: pointer;
   transition: all 0.2s ease-in-out;
+  text-align: center;
 }
 
 .tool-button:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary-accent-hover);
+  color: var(--text-primary);
+}
+
+/* Style for the selected/active filter button */
+.tool-button.active {
   background-color: var(--primary-accent);
   color: var(--background);
   border-color: var(--primary-accent);
-  transform: translateY(-2px);
-  text-decoration: none;
 }
 
 /* Grid layout for the project cards */
@@ -35,7 +42,7 @@
   margin-top: 2rem;
 }
 
-/* Styling for each project card */
+/* Styling for each individual project card */
 .project-card {
   background-color: var(--surface);
   border-radius: 10px;
@@ -54,8 +61,8 @@
 
 .project-image {
   width: 100%;
-  max-height: 200px; /* Control image height */
-  object-fit: contain; /* Ensures image fits without stretching */
+  max-height: 200px;
+  object-fit: contain;
   margin-bottom: 1rem;
   border-radius: 5px;
   flex-shrink: 0;
@@ -67,11 +74,14 @@
 }
 
 .project-card p {
-  flex-grow: 1; /* Allows paragraph to fill space, pushing link to bottom */
+  flex-grow: 1; /* Pushes the link to the bottom */
   color: var(--text-secondary);
+  margin: 0.5rem 0;
 }
 
 .project-card a {
   font-weight: bold;
   font-size: 1.1rem;
+  margin-top: auto; /* Aligns link at the bottom */
 }
+
