@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ProjectsPage.css';
 
 // Import all the individual project components
@@ -8,28 +8,19 @@ import SqlProjects from './projects/SqlProjects';
 import ExcelProjects from './projects/ExcelProjects';
 import TableauProjects from './projects/TableauProjects';
 
+// Import custom hook and constants
+import { useProjectFilters } from '../hooks/useProjectFilters';
+import { FILTER_TYPES, FILTER_LABELS } from '../constants';
+
 function ProjectsPage() {
-  // Main filter: 'swe' or 'data'
-  const [mainFilter, setMainFilter] = useState('swe');
-  // Sub-filter for data analysis tools. 'python' is the default if data is selected.
-  const [dataSubFilter, setDataSubFilter] = useState('python');
-  // Third-level filter for professional vs skills/practice projects
-  const [projectTypeFilter, setProjectTypeFilter] = useState('professional');
-
-  // When a main filter is clicked, reset the sub-filter
-  const handleMainFilterClick = (filter) => {
-    setMainFilter(filter);
-    if (filter === 'data') {
-      setDataSubFilter('python'); // Default to showing Python projects first
-    }
-    setProjectTypeFilter('professional'); // Reset to professional when switching main filters
-  };
-
-  // When a data sub-filter is clicked, reset the project type filter
-  const handleDataSubFilterClick = (filter) => {
-    setDataSubFilter(filter);
-    setProjectTypeFilter('professional'); // Reset to professional when switching data sub-filters
-  };
+  const {
+    mainFilter,
+    dataSubFilter,
+    projectTypeFilter,
+    handleMainFilterClick,
+    handleDataSubFilterClick,
+    handleProjectTypeFilterClick
+  } = useProjectFilters();
 
   return (
     <div className="projects-container">
@@ -39,64 +30,64 @@ function ProjectsPage() {
       {/* --- Main Filter Buttons --- */}
       <div className="tool-buttons">
         <button
-          className={`tool-button ${mainFilter === 'swe' ? 'active' : ''}`}
-          onClick={() => handleMainFilterClick('swe')}
+          className={`tool-button ${mainFilter === FILTER_TYPES.MAIN.SWE ? 'active' : ''}`}
+          onClick={() => handleMainFilterClick(FILTER_TYPES.MAIN.SWE)}
         >
-          Software Engineering
+          {FILTER_LABELS.MAIN.SWE}
         </button>
         <button
-          className={`tool-button ${mainFilter === 'data' ? 'active' : ''}`}
-          onClick={() => handleMainFilterClick('data')}
+          className={`tool-button ${mainFilter === FILTER_TYPES.MAIN.DATA ? 'active' : ''}`}
+          onClick={() => handleMainFilterClick(FILTER_TYPES.MAIN.DATA)}
         >
-          Data Analysis
+          {FILTER_LABELS.MAIN.DATA}
         </button>
       </div>
 
       {/* --- Conditionally Render Sub-Filter Buttons --- */}
-      {mainFilter === 'data' && (
+      {mainFilter === FILTER_TYPES.MAIN.DATA && (
         <div className="tool-buttons sub-filter-buttons">
           <button
-            className={`tool-button ${dataSubFilter === 'python' ? 'active' : ''}`}
-            onClick={() => handleDataSubFilterClick('python')}
+            className={`tool-button ${dataSubFilter === FILTER_TYPES.DATA_SUB.PYTHON ? 'active' : ''}`}
+            onClick={() => handleDataSubFilterClick(FILTER_TYPES.DATA_SUB.PYTHON)}
           >
-            Python
+            {FILTER_LABELS.DATA_SUB.PYTHON}
           </button>
           <button
-            className={`tool-button ${dataSubFilter === 'sql' ? 'active' : ''}`}
-            onClick={() => handleDataSubFilterClick('sql')}
+            className={`tool-button ${dataSubFilter === FILTER_TYPES.DATA_SUB.SQL ? 'active' : ''}`}
+            onClick={() => handleDataSubFilterClick(FILTER_TYPES.DATA_SUB.SQL)}
           >
-            SQL
+            {FILTER_LABELS.DATA_SUB.SQL}
           </button>
           <button
-            className={`tool-button ${dataSubFilter === 'excel' ? 'active' : ''}`}
-            onClick={() => handleDataSubFilterClick('excel')}
+            className={`tool-button ${dataSubFilter === FILTER_TYPES.DATA_SUB.EXCEL ? 'active' : ''}`}
+            onClick={() => handleDataSubFilterClick(FILTER_TYPES.DATA_SUB.EXCEL)}
           >
-            Excel
+            {FILTER_LABELS.DATA_SUB.EXCEL}
           </button>
           <button
-            className={`tool-button ${dataSubFilter === 'tableau' ? 'active' : ''}`}
-            onClick={() => handleDataSubFilterClick('tableau')}
+            className={`tool-button ${dataSubFilter === FILTER_TYPES.DATA_SUB.TABLEAU ? 'active' : ''}`}
+            onClick={() => handleDataSubFilterClick(FILTER_TYPES.DATA_SUB.TABLEAU)}
           >
-            Tableau
+            {FILTER_LABELS.DATA_SUB.TABLEAU}
           </button>
         </div>
       )}
 
       {/* --- Third-level filter: Professional vs Skills/Practice --- */}
       {/* Show for Software Engineering OR for Python projects */}
-      {(mainFilter === 'swe' || (mainFilter === 'data' && dataSubFilter === 'python')) && (
+      {(mainFilter === FILTER_TYPES.MAIN.SWE || (mainFilter === FILTER_TYPES.MAIN.DATA && dataSubFilter === FILTER_TYPES.DATA_SUB.PYTHON)) && (
         <div className="tool-buttons sub-filter-buttons">
           <button
-            className={`tool-button ${projectTypeFilter === 'professional' ? 'active' : ''}`}
-            onClick={() => setProjectTypeFilter('professional')}
+            className={`tool-button ${projectTypeFilter === FILTER_TYPES.PROJECT_TYPE.PROFESSIONAL ? 'active' : ''}`}
+            onClick={() => handleProjectTypeFilterClick(FILTER_TYPES.PROJECT_TYPE.PROFESSIONAL)}
           >
-            Professional
+            {FILTER_LABELS.PROJECT_TYPE.PROFESSIONAL}
           </button>
           <button
-            className={`tool-button ${projectTypeFilter === 'skills' ? 'active' : ''}`}
-            onClick={() => setProjectTypeFilter('skills')}
+            className={`tool-button ${projectTypeFilter === FILTER_TYPES.PROJECT_TYPE.SKILLS ? 'active' : ''}`}
+            onClick={() => handleProjectTypeFilterClick(FILTER_TYPES.PROJECT_TYPE.SKILLS)}
           >
-            Skills / Practice
+            {FILTER_LABELS.PROJECT_TYPE.SKILLS}
           </button>
         </div>
       )}
@@ -106,13 +97,13 @@ function ProjectsPage() {
       {/* --- Conditionally Render Projects --- */}
       <div className="projects-display-area">
         {/* If main filter is 'swe', show SWE projects with filter */}
-        {mainFilter === 'swe' && <SoftwareEngineeringProjects filter={projectTypeFilter} />}
+        {mainFilter === FILTER_TYPES.MAIN.SWE && <SoftwareEngineeringProjects filter={projectTypeFilter} />}
 
         {/* If main filter is 'data', check the sub-filter */}
-        {mainFilter === 'data' && dataSubFilter === 'python' && <PythonProjects filter={projectTypeFilter} />}
-        {mainFilter === 'data' && dataSubFilter === 'sql' && <SqlProjects />}
-        {mainFilter === 'data' && dataSubFilter === 'excel' && <ExcelProjects />}
-        {mainFilter === 'data' && dataSubFilter === 'tableau' && <TableauProjects />}
+        {mainFilter === FILTER_TYPES.MAIN.DATA && dataSubFilter === FILTER_TYPES.DATA_SUB.PYTHON && <PythonProjects filter={projectTypeFilter} />}
+        {mainFilter === FILTER_TYPES.MAIN.DATA && dataSubFilter === FILTER_TYPES.DATA_SUB.SQL && <SqlProjects />}
+        {mainFilter === FILTER_TYPES.MAIN.DATA && dataSubFilter === FILTER_TYPES.DATA_SUB.EXCEL && <ExcelProjects />}
+        {mainFilter === FILTER_TYPES.MAIN.DATA && dataSubFilter === FILTER_TYPES.DATA_SUB.TABLEAU && <TableauProjects />}
       </div>
     </div>
   );

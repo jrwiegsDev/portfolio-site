@@ -12,7 +12,12 @@ const app = express();
 const PORT = process.env.PORT || 5001;
 
 // --- Middleware ---
-app.use(cors());
+// CORS configuration - allow requests from your frontend domain
+const corsOptions = {
+  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // --- Nodemailer Transporter Setup ---
