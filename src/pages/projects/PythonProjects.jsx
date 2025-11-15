@@ -1,50 +1,10 @@
 import ProjectCard from '../../components/ProjectCard';
-
-const professionalProjects = [
-  {
-    imageSrc: '/python_project_parole_sim.png',
-    title: 'Dynamic Parole Recommendation Simulator',
-    description: 'Simulate 500 parole cases to analyze how adding dynamic variables changes release recommendations. This project explores responsible data-driven policy modeling using pandas and matplotlib.',
-    linkUrl: 'https://github.com/select-joe-from-wiegs/joe_portfolio/blob/main/python/Project_Dynamic-Parole-Recommendation-Simulator.ipynb'
-  }
-];
-
-const skillsProjects = [
-  {
-    imageSrc: '/python_project_web_scraper.png',
-    title: 'Automated Web Scraper',
-    description: 'Extract live cryptocurrency data using requests, BeautifulSoup, and store the results in a structured DataFrame.',
-    linkUrl: 'https://github.com/select-joe-from-wiegs/joe_portfolio/blob/main/python/Project_Automated_Web_Scraper.ipynb'
-  },
-  {
-    imageSrc: '/python_project_web_scraper_regex_pandas.png',
-    title: 'Web Scraping + Regex + Pandas',
-    description: 'Scrape sample HTML data, apply regex patterns for cleaning, and analyze results with pandas.',
-    linkUrl: 'https://github.com/select-joe-from-wiegs/joe_portfolio/blob/main/python/Project_Web_Scraping_Regex_Pandas.ipynb'
-  },
-  {
-    imageSrc: '/python_project_file_sorter.png',
-    title: 'Automatic File Sorter',
-    description: 'Organize and sort files in a folder based on file type using os, shutil, and Python automation.',
-    linkUrl: 'https://github.com/select-joe-from-wiegs/joe_portfolio/blob/main/python/Project_Automatic_File_Sorter.ipynb'
-  },
-  {
-    imageSrc: '/python_project_calculator.png',
-    title: 'Calculator',
-    description: 'A beginner-friendly CLI calculator that handles basic arithmetic operations with input validation.',
-    linkUrl: 'https://github.com/select-joe-from-wiegs/joe_portfolio/blob/main/python/Project_Calculator.ipynb'
-  },
-  {
-    imageSrc: '/python_project_unit_converter.png',
-    title: 'Unit of Measurement Converter',
-    description: 'Convert between units like length, weight, and temperature using reusable functions and clean user input.',
-    linkUrl: 'https://github.com/select-joe-from-wiegs/joe_portfolio/blob/main/python/Project_Unit_of_Measurement_Converter.ipynb'
-  }
-];
+import { pythonProjects } from '../../data/projectsData';
+import { HEADINGS, LINK_TEXT } from '../../constants';
 
 function PythonProjects({ filter = 'professional' }) {
-  const projectsToShow = filter === 'professional' ? professionalProjects : skillsProjects;
-  const heading = filter === 'professional' ? 'Professional Projects' : 'Skills / Practice Projects';
+  const projectsToShow = filter === 'professional' ? pythonProjects.professional : pythonProjects.skills;
+  const heading = filter === 'professional' ? HEADINGS.PROFESSIONAL_PROJECTS : HEADINGS.SKILLS_PROJECTS;
 
   return (
     <div>
@@ -57,7 +17,7 @@ function PythonProjects({ filter = 'professional' }) {
             imageAlt={project.title}
             title={project.title}
             linkUrl={project.linkUrl}
-            linkText="View Notebook on GitHub"
+            linkText={LINK_TEXT.VIEW_NOTEBOOK}
           >
             <p>{project.description}</p>
           </ProjectCard>
