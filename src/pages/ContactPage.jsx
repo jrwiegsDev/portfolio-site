@@ -1,13 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ContactPage.css';
 
 function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
+    website: '', // Honeypot field
+    formLoadTime: Date.now() // Track when form loaded
   });
   const [status, setStatus] = useState(''); // To display success/error messages
+
+  // Update formLoadTime when component mounts
+  useEffect(() => {
+    setFormData(prev => ({ ...prev, formLoadTime: Date.now() }));
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,9 +40,16 @@ function ContactPage() {
 
       if (response.ok) {
         setStatus('Message sent successfully!');
-        setFormData({ name: '', email: '', message: '' }); // Reset form
+        setFormData({ 
+          name: '', 
+          email: '', 
+          message: '', 
+          website: '',
+          formLoadTime: Date.now() 
+        }); // Reset form
       } else {
-        setStatus('Failed to send message. Please try again.');
+        const data = await response.json();
+        setStatus(data.msg || data.message || 'Failed to send message. Please try again.');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -72,6 +86,16 @@ function ContactPage() {
               onChange={handleChange}
               required
             ></textarea>
+            {/* Honeypot field - hidden from users, bots will fill it */}
+            <input 
+              type="text"
+              name="website"
+              value={formData.website}
+              onChange={handleChange}
+              style={{ display: 'none' }}
+              tabIndex={-1}
+              autoComplete="off"
+            />
             <button type="submit">Send Message</button>
             {status && <p style={{ textAlign: 'center', marginTop: '1rem' }}>{status}</p>}
           </form>
