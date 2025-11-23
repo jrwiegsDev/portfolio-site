@@ -3,7 +3,7 @@ nav {
   padding: 1.5rem;
   margin-bottom: 2rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid var(--background);
   box-shadow: 0 4px 12px var(--shadow-color);
@@ -13,6 +13,9 @@ nav {
   display: flex;
   align-items: center;
   gap: 2rem;
+  flex: 1;
+  justify-content: center;
+  max-width: 1200px;
 }
 
 .nav-links a {
@@ -38,7 +41,68 @@ nav {
   line-height: 1;
 }
 
+/* Buy Me a Coffee button */
+.coffee-button {
+  background-color: var(--primary-accent);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.coffee-button:hover {
+  background-color: var(--primary-accent-hover);
+  transform: translateY(-2px) scale(1.1);
+}
+
 /* RESPONSIVE BREAKPOINTS */
+
+/* Extra large screens: 1440px and up */
+@media (min-width: 1440px) {
+  .nav-links {
+    gap: 3.5rem;
+  }
+  
+  .nav-links a {
+    font-size: 1.4rem;
+  }
+  
+  .nav-links span {
+    font-size: 1.4rem;
+  }
+  
+  .coffee-button {
+    font-size: 1.75rem;
+    padding: 0.6rem 0.9rem;
+  }
+}
+
+/* Large screens: 1200px - 1439px */
+@media (min-width: 1200px) and (max-width: 1439px) {
+  .nav-links {
+    gap: 3rem;
+  }
+  
+  .nav-links a {
+    font-size: 1.35rem;
+  }
+  
+  .nav-links span {
+    font-size: 1.35rem;
+  }
+  
+  .coffee-button {
+    font-size: 1.65rem;
+    padding: 0.55rem 0.85rem;
+  }
+}
 
 /* Tablets (portrait) and smaller laptops: 768px - 1024px */
 @media (max-width: 1024px) {
