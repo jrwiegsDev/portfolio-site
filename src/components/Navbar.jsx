@@ -14,6 +14,15 @@ function Navbar() {
         <span>|</span>
         <Link to="/contact">Contact</Link>
       </div>
+      <a 
+        href="https://buymeacoffee.com/jrwiegsdev" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="coffee-button"
+        title="Buy Me a Coffee"
+      >
+        ☕
+      </a>
     </nav>
   );
 }

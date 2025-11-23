@@ -97,3 +97,30 @@
   object-fit: contain;
   flex-shrink: 0; /* Prevents icon from shrinking */
 }
+
+/* Buy Me a Coffee section */
+.coffee-section {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--background);
+  text-align: center;
+}
+
+.coffee-link {
+  display: inline-block;
+  background-color: var(--primary-accent);
+  color: var(--background);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.coffee-link:hover {
+  background-color: var(--primary-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px var(--shadow-color);
+}

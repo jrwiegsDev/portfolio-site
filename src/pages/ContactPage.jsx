@@ -112,6 +112,16 @@ function ContactPage() {
             <img src="/GitHub_logo.png" alt="GitHub" className="contact-icon" />
             <a className="contact-link" href="https://github.com/jrwiegsDev" target="_blank" rel="noopener noreferrer">View my profile!</a>
           </div>
+          <div className="coffee-section">
+            <a 
+              href="https://buymeacoffee.com/jrwiegsdev" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="coffee-link"
+            >
+              ☕ Buy Me a Coffee
+            </a>
+          </div>
         </div>
       </div>
     </div>
