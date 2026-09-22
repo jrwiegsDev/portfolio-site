@@ -193,6 +193,15 @@ describe('POST /api/contact', () => {
   });
 });
 
+describe('GET /health', () => {
+  test('returns 200 when the app is up', async () => {
+    const res = await request(app).get('/health');
+
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({ status: 'ok' });
+  });
+});
+
 describe('server', () => {
   test('rejects request bodies over 10kb with 413', async () => {
     const res = await postContact(validPayload({ message: 'a'.repeat(11 * 1024) }));

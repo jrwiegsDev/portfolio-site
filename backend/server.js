@@ -27,6 +27,12 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json({ limit: '10kb' }));
 
+// --- Health Check ---
+// For Render's health check: confirms the app is up and serving requests
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
+
 // --- API Routes ---
 app.use('/api/contact', contactRoutes);
 
@@ -51,7 +57,14 @@ module.exports = app;
 
 // --- Start the Server ---
 if (require.main === module) {
-  app.listen(PORT, () => {
+  const server = app.listen(PORT, () => {
     console.log(`Server is running on port: ${PORT}`);
+  });
+
+  // Render sends SIGTERM before replacing an instance during a deploy:
+  // stop accepting connections and let in-flight requests (e.g. an email send) finish.
+  process.on('SIGTERM', () => {
+    console.log('SIGTERM received, shutting down gracefully');
+    server.close(() => process.exit(0));
   });
 }
