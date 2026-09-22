@@ -89,6 +89,15 @@ function ProjectsPage() {
           >
             {FILTER_LABELS.PROJECT_TYPE.SKILLS}
           </button>
+          {/* Archived only applies to Software Engineering projects */}
+          {mainFilter === FILTER_TYPES.MAIN.SWE && (
+            <button
+              className={`tool-button ${projectTypeFilter === FILTER_TYPES.PROJECT_TYPE.ARCHIVED ? 'active' : ''}`}
+              onClick={() => handleProjectTypeFilterClick(FILTER_TYPES.PROJECT_TYPE.ARCHIVED)}
+            >
+              {FILTER_LABELS.PROJECT_TYPE.ARCHIVED}
+            </button>
+          )}
         </div>
       )}
 

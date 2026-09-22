@@ -17,7 +17,8 @@ export const FILTER_TYPES = {
   },
   PROJECT_TYPE: {
     PROFESSIONAL: 'professional',
-    SKILLS: 'skills'
+    SKILLS: 'skills',
+    ARCHIVED: 'archived'
   }
 };
 
@@ -35,7 +36,8 @@ export const FILTER_LABELS = {
   },
   PROJECT_TYPE: {
     PROFESSIONAL: 'Professional',
-    SKILLS: 'Skills / Practice'
+    SKILLS: 'Skills / Practice',
+    ARCHIVED: 'Archived'
   }
 };
 
@@ -43,6 +45,7 @@ export const FILTER_LABELS = {
 export const HEADINGS = {
   PROFESSIONAL_PROJECTS: 'Professional Projects',
   SKILLS_PROJECTS: 'Skills / Practice Projects',
+  ARCHIVED_PROJECTS: 'Archived Projects',
   SQL_PROJECTS: 'SQL Projects',
   EXCEL_PROJECTS: 'Excel Projects',
   TABLEAU_PROJECTS: 'Tableau Projects'

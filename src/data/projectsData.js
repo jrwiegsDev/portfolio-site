@@ -6,48 +6,6 @@
 export const softwareEngineeringProjects = {
   professional: [
     {
-      imageSrc: '/fortier-website.png',
-      imageAlt: 'Julie Fortier Campaign Website',
-      title: 'Julie Fortier for Congress Campaign Website',
-      linkUrl: 'https://www.juliefortier.com/',
-      linkText: 'Visit Live Site',
-      description: 'Full-stack campaign website built for Julie Fortier\'s Congressional campaign. Features dynamic content management for events, donation integration, and responsive design to engage voters across all devices. Built with React, Node.js, Express, and MongoDB.'
-    },
-    {
-      imageSrc: '/fortier-signups.png',
-      imageAlt: 'Volunteer Signup System',
-      title: 'Campaign Volunteer Signup System',
-      linkUrl: 'https://www.volunteer4julie.com/',
-      linkText: 'Visit Live Site',
-      description: 'A streamlined volunteer signup platform for the Fortier campaign, allowing supporters to register for volunteer opportunities with the campaign. Features integration with the volunteer management dashboard. Built with React and Node.js/Express backend.'
-    },
-    {
-      imageSrc: '/volunteer-dashboard.png',
-      imageAlt: 'Volunteer Management Dashboard',
-      title: 'Volunteer Management Dashboard',
-      linkUrl: null,
-      linkText: 'Click Photo for Details',
-      description: 'A comprehensive admin dashboard for managing campaign volunteers, tracking campaign event requests, coordinating outreach efforts, and analyzing volunteer data. Features secure authentication, role-based access control, data visualization, and export capabilities. Built with React, Node.js, Express, and MongoDB.',
-      useModal: true
-    },
-    {
-      imageSrc: '/OADC.png',
-      imageAlt: 'OADC Website Project',
-      title: "O'Fallon Area Democratic Club Website",
-      linkUrl: 'https://ofallonildems.org/',
-      linkText: 'Visit Live Site',
-      description: 'Commissioned to build the entire website for our local Democratic Club after creating their newsletter management system. This full-stack application serves as the online hub of information and events, featuring dynamic content management, event calendars, and member resources powered by a custom Node.js/Express backend.'
-    },
-    {
-      imageSrc: '/Newsletter-Events_App.png',
-      imageAlt: 'Newsletter and Events Management App',
-      title: 'Newsletter & Events Management App',
-      linkUrl: null,
-      linkText: 'Click Photo for Details',
-      description: 'After noticing the local Democratic Club was manually sending individual emails from a personal Gmail account, I proactively built a comprehensive solution to streamline their community outreach. This full-stack application manages subscriber lists, automates newsletter distribution, and tracks events. Built with React, Node.js, Express, and MongoDB. The success of this initiative led to being commissioned to build their entire website.',
-      useModal: true
-    },
-    {
       imageSrc: '/Pledge-to-Vote-2026.png',
       imageAlt: 'Pledge to Vote 2026 Project',
       title: 'Pledge to Vote 2026',
@@ -97,8 +55,48 @@ export const softwareEngineeringProjects = {
       linkText: 'View This Project\'s Page',
       description: 'A responsive digital business card featuring a functional back-end contact form built with Node.js and Express.'
     }
+  ],
+  // Projects built for organizations that have since been handed off; no longer maintained by me
+  archived: [
+    {
+      imageSrc: '/fortier-website.png',
+      imageAlt: 'Julie Fortier Campaign Website',
+      title: 'Julie Fortier for Congress Campaign Website',
+      linkUrl: 'https://www.juliefortier.com/',
+      linkText: 'Visit Live Site',
+      description: 'Full-stack campaign website built for Julie Fortier\'s Congressional campaign. Features dynamic content management for events, donation integration, and responsive design to engage voters across all devices. Built with React, Node.js, Express, and MongoDB.'
+    },
+    {
+      imageSrc: '/volunteer-dashboard.png',
+      imageAlt: 'Volunteer Management Dashboard',
+      title: 'Volunteer Management Dashboard',
+      linkUrl: null,
+      linkText: 'Click Photo for Details',
+      description: 'A volunteer signup site and admin dashboard for the Fortier campaign. Supporters registered for volunteer opportunities, and campaign staff managed volunteers, tracked event requests, coordinated outreach, and analyzed volunteer data. Features secure authentication, role-based access control, data visualization, and export capabilities. Built with React, Node.js, Express, and MongoDB.',
+      useModal: true
+    },
+    {
+      imageSrc: '/OADC.png',
+      imageAlt: 'OADC Website Project',
+      title: "O'Fallon Area Democratic Club Website",
+      linkUrl: 'https://ofallonildems.org/',
+      linkText: 'Visit Live Site',
+      description: 'Commissioned to build the entire website for our local Democratic Club after creating their newsletter management system. This full-stack application serves as the online hub of information and events, featuring dynamic content management, event calendars, and member resources powered by a custom Node.js/Express backend.'
+    },
+    {
+      imageSrc: '/Newsletter-Events_App.png',
+      imageAlt: 'Newsletter and Events Management App',
+      title: 'Newsletter & Events Management App',
+      linkUrl: null,
+      linkText: 'Click Photo for Details',
+      description: 'After noticing the local Democratic Club was manually sending individual emails from a personal Gmail account, I proactively built a comprehensive solution to streamline their community outreach. This full-stack application manages subscriber lists, automates newsletter distribution, and tracks events. Built with React, Node.js, Express, and MongoDB. The success of this initiative led to being commissioned to build their entire website.',
+      useModal: true
+    }
   ]
 };
+
+// Notebooks are stored in public/ in this repo; link to GitHub's rendered view of them
+const NOTEBOOK_BASE_URL = 'https://github.com/jrwiegsDev/portfolio-site/blob/main/public';
 
 export const pythonProjects = {
   professional: [
@@ -106,7 +104,7 @@ export const pythonProjects = {
       imageSrc: '/python_project_parole_sim.png',
       title: 'Dynamic Parole Recommendation Simulator',
       description: 'Simulate 500 parole cases to analyze how adding dynamic variables changes release recommendations. This project explores responsible data-driven policy modeling using pandas and matplotlib.',
-      linkUrl: 'https://github.com/select-joe-from-wiegs/joe_portfolio/blob/main/python/Project_Dynamic-Parole-Recommendation-Simulator.ipynb'
+      linkUrl: `${NOTEBOOK_BASE_URL}/Project_Dynamic-Parole-Recommendation-Simulator.ipynb`
     }
   ],
   skills: [
@@ -114,31 +112,31 @@ export const pythonProjects = {
       imageSrc: '/python_project_web_scraper.png',
       title: 'Automated Web Scraper',
       description: 'Extract live cryptocurrency data using requests, BeautifulSoup, and store the results in a structured DataFrame.',
-      linkUrl: 'https://github.com/select-joe-from-wiegs/joe_portfolio/blob/main/python/Project_Automated_Web_Scraper.ipynb'
+      linkUrl: `${NOTEBOOK_BASE_URL}/Project_Automated_Web_Scraper.ipynb`
     },
     {
       imageSrc: '/python_project_web_scraper_regex_pandas.png',
       title: 'Web Scraping + Regex + Pandas',
       description: 'Scrape sample HTML data, apply regex patterns for cleaning, and analyze results with pandas.',
-      linkUrl: 'https://github.com/select-joe-from-wiegs/joe_portfolio/blob/main/python/Project_Web_Scraping_Regex_Pandas.ipynb'
+      linkUrl: `${NOTEBOOK_BASE_URL}/Project_Web_Scraping_Regex_Pandas.ipynb`
     },
     {
       imageSrc: '/python_project_file_sorter.png',
       title: 'Automatic File Sorter',
       description: 'Organize and sort files in a folder based on file type using os, shutil, and Python automation.',
-      linkUrl: 'https://github.com/select-joe-from-wiegs/joe_portfolio/blob/main/python/Project_Automatic_File_Sorter.ipynb'
+      linkUrl: `${NOTEBOOK_BASE_URL}/Project_Automatic_File_Sorter.ipynb`
     },
     {
       imageSrc: '/python_project_calculator.png',
       title: 'Calculator',
       description: 'A beginner-friendly CLI calculator that handles basic arithmetic operations with input validation.',
-      linkUrl: 'https://github.com/select-joe-from-wiegs/joe_portfolio/blob/main/python/Project_Calculator.ipynb'
+      linkUrl: `${NOTEBOOK_BASE_URL}/Project_Calculator.ipynb`
     },
     {
       imageSrc: '/python_project_unit_converter.png',
       title: 'Unit of Measurement Converter',
       description: 'Convert between units like length, weight, and temperature using reusable functions and clean user input.',
-      linkUrl: 'https://github.com/select-joe-from-wiegs/joe_portfolio/blob/main/python/Project_Unit_of_Measurement_Converter.ipynb'
+      linkUrl: `${NOTEBOOK_BASE_URL}/Project_Unit_of_Measurement_Converter.ipynb`
     }
   ]
 };

@@ -34,6 +34,12 @@
   border-color: var(--primary-accent);
 }
 
+/* Explanation shown above the Archived projects */
+.archived-note {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
 /* Grid layout for the project cards */
 .project-grid {
   display: grid;

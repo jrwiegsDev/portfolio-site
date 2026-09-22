@@ -2,13 +2,19 @@ import React from 'react';
 import ProjectCard from '../../components/ProjectCard';
 import ImageModal from '../../components/ImageModal';
 import { softwareEngineeringProjects } from '../../data/projectsData';
-import { HEADINGS } from '../../constants';
+import { FILTER_TYPES, HEADINGS } from '../../constants';
 
-function SoftwareEngineeringProjects({ filter = 'professional' }) {
+const HEADING_BY_FILTER = {
+  [FILTER_TYPES.PROJECT_TYPE.PROFESSIONAL]: HEADINGS.PROFESSIONAL_PROJECTS,
+  [FILTER_TYPES.PROJECT_TYPE.SKILLS]: HEADINGS.SKILLS_PROJECTS,
+  [FILTER_TYPES.PROJECT_TYPE.ARCHIVED]: HEADINGS.ARCHIVED_PROJECTS
+};
+
+function SoftwareEngineeringProjects({ filter = FILTER_TYPES.PROJECT_TYPE.PROFESSIONAL }) {
   const [modalImage, setModalImage] = React.useState(null);
-  
-  const projectsToShow = filter === 'professional' ? softwareEngineeringProjects.professional : softwareEngineeringProjects.skills;
-  const heading = filter === 'professional' ? HEADINGS.PROFESSIONAL_PROJECTS : HEADINGS.SKILLS_PROJECTS;
+
+  const projectsToShow = softwareEngineeringProjects[filter] ?? softwareEngineeringProjects.professional;
+  const heading = HEADING_BY_FILTER[filter] ?? HEADINGS.PROFESSIONAL_PROJECTS;
 
   const handleImageClick = (imageSrc, imageAlt) => {
     setModalImage({ src: imageSrc, alt: imageAlt });
@@ -21,6 +27,11 @@ function SoftwareEngineeringProjects({ filter = 'professional' }) {
   return (
     <div>
       <h2>{heading}</h2>
+      {filter === FILTER_TYPES.PROJECT_TYPE.ARCHIVED && (
+        <p className="archived-note">
+          Projects I built for organizations and have since handed off. I no longer maintain them, so live sites may have changed.
+        </p>
+      )}
       <div className="project-grid">
         {projectsToShow.map(project => {
           // Special handling for projects with modal
