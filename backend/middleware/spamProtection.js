@@ -2,20 +2,22 @@
 const rateLimit = require('express-rate-limit');
 
 // Rate limiter for public forms (e.g., contact form)
-// Allows 5 submissions per hour per IP address
+// Allows 5 submissions per hour per IP address.
+// Relies on `trust proxy` (set in server.js) so req.ip is the visitor's IP, not Render's proxy.
 const publicFormLimiter = rateLimit({
   windowMs: 60 * 60 * 1000, // 1 hour
-  max: 5, // Limit each IP to 5 requests per windowMs
-  message: 'Too many submissions from this IP, please try again later.',
-  standardHeaders: true,
+  limit: 5, // Limit each IP to 5 requests per windowMs
+  message: { msg: 'Too many submissions from this IP, please try again later.' },
+  standardHeaders: 'draft-8',
   legacyHeaders: false,
 });
 
 // Middleware to validate honeypot field
 // The 'website' field should be empty (hidden from users, filled by bots)
 const validateHoneypot = (req, res, next) => {
-  if (req.body.website) {
-    return res.status(400).json({ message: 'Spam detected' });
+  const { website } = req.body || {};
+  if (website) {
+    return res.status(400).json({ msg: 'Spam detected' });
   }
   next();
 };
@@ -24,41 +26,23 @@ const validateHoneypot = (req, res, next) => {
 // Forms should take at least MIN_SUBMIT_TIME to complete (human behavior)
 const MIN_SUBMIT_TIME = 3000; // 3 seconds
 
+const isTimestamp = (value) =>
+  (typeof value === 'number' && Number.isFinite(value)) ||
+  (typeof value === 'string' && /^\d{1,15}$/.test(value));
+
 const validateSubmissionTiming = (req, res, next) => {
-  const { formLoadTime } = req.body;
-  
-  if (!formLoadTime) {
-    return res.status(400).json({ message: 'Invalid submission' });
+  const { formLoadTime } = req.body || {};
+
+  if (!isTimestamp(formLoadTime)) {
+    return res.status(400).json({ msg: 'Invalid submission' });
   }
 
-  const timeTaken = Date.now() - parseInt(formLoadTime);
+  const timeTaken = Date.now() - Number(formLoadTime);
+  if (timeTaken < 0) {
+    return res.status(400).json({ msg: 'Invalid submission' });
+  }
   if (timeTaken < MIN_SUBMIT_TIME) {
-    return res.status(400).json({ message: 'Submission too fast' });
-  }
-
-  next();
-};
-
-// Middleware to sanitize request body
-// Removes potentially dangerous HTML/script tags
-const sanitizeRequestBody = (req, res, next) => {
-  const sanitize = (value) => {
-    if (typeof value === 'string') {
-      // Remove script tags and dangerous HTML
-      return value
-        .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
-        .replace(/<iframe\b[^<]*(?:(?!<\/iframe>)<[^<]*)*<\/iframe>/gi, '')
-        .replace(/javascript:/gi, '')
-        .replace(/on\w+\s*=/gi, ''); // Remove event handlers like onclick=
-    }
-    return value;
-  };
-
-  // Sanitize all string values in request body
-  if (req.body) {
-    Object.keys(req.body).forEach(key => {
-      req.body[key] = sanitize(req.body[key]);
-    });
+    return res.status(400).json({ msg: 'Submission too fast' });
   }
 
   next();
@@ -67,6 +51,5 @@ const sanitizeRequestBody = (req, res, next) => {
 module.exports = {
   publicFormLimiter,
   validateHoneypot,
-  validateSubmissionTiming,
-  sanitizeRequestBody
+  validateSubmissionTiming
 };

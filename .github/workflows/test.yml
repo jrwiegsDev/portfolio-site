@@ -6,13 +6,16 @@ on:
   pull_request:
     branches: [ main, develop ]
 
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [18.x, 20.x]
+        node-version: [22.x, 24.x]
 
     steps:
     - name: Checkout code
@@ -31,7 +34,7 @@ jobs:
 
     - name: Run tests
       working-directory: ./backend
-      run: npm test
+      run: npm run test:coverage
       env:
         NODE_ENV: test
         EMAIL_USER: test@example.com
@@ -45,3 +48,16 @@ jobs:
         name: test-results-${{ matrix.node-version }}
         path: backend/coverage/
         retention-days: 30
+
+  image-metadata:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install exiftool
+      run: sudo apt-get update && sudo apt-get install -y libimage-exiftool-perl
+
+    - name: Check public images for GPS/camera metadata
+      run: ./scripts/check-image-metadata.sh
