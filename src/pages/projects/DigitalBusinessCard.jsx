@@ -15,7 +15,7 @@ function DigitalBusinessCard() {
           className="db-card-headshot" 
         />
         <h1>Joe Wiegert</h1>
-        <h3>Software Engineer</h3>
+        <h3>Backend Developer</h3>
         <div className="db-action-buttons">
           <a 
             href="/Joe_Wiegert_Resume.pdf"
@@ -34,15 +34,18 @@ function DigitalBusinessCard() {
           </a>
         </div>
         <div className="db-skills-section">
-          <h4>Full-Stack Skills</h4>
+          <h4>Skills</h4>
           <ul className="db-skills-list">
-            <li className="db-skill-item">React</li>
             <li className="db-skill-item">Node.js</li>
             <li className="db-skill-item">Express</li>
+            <li className="db-skill-item">REST APIs</li>
+            <li className="db-skill-item">Python</li>
+            <li className="db-skill-item">SQL</li>
             <li className="db-skill-item">MongoDB</li>
             <li className="db-skill-item">JavaScript (ES6+)</li>
-            <li className="db-skill-item">HTML5 & CSS3</li>
-            <li className="db-skill-item">REST APIs</li>
+            <li className="db-skill-item">React</li>
+            <li className="db-skill-item">QA & Testing</li>
+            <li className="db-skill-item">Git & GitHub</li>
           </ul>
         </div>
         <form className="db-contact-form" onSubmit={handleSubmit}>

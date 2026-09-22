@@ -25,7 +25,7 @@ function ProjectsPage() {
   return (
     <div className="projects-container">
       <h1>My Work</h1>
-      <p>A collection of my projects showcasing my skills in full-stack development and data analysis. Select a category below to view my projects!</p>
+      <p>A collection of my projects, from backend services and full-stack web apps to data analysis. Select a category below to view my projects!</p>
 
       {/* --- Main Filter Buttons --- */}
       <div className="tool-buttons">

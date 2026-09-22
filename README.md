@@ -1,27 +1,43 @@
-# Portfolio Website (React Version)
+# Portfolio Website
 
-This repository contains the source code for my personal portfolio website, rebuilt from the ground up using a modern JavaScript tech stack.
+Source code for my personal portfolio at [jrwportfolio.com](https://jrwportfolio.com): a React single-page app with a small Node.js/Express API behind its contact form.
 
-## Project Overview
+## Architecture
 
-This project is a complete rebuild of my original portfolio site, which was initially created with Python and Flask. After completing a full-stack development course, I decided to re-engineer the entire site to better showcase my current skills and create a codebase that is easier for me to maintain and expand upon.
+```
+Browser ──► React SPA (Vite, Render static site) ──► POST /api/contact ──► Express API (Render web service) ──► Gmail (Nodemailer)
+```
 
-The goal was to create a clean, responsive, and performant single-page application that effectively displays my projects, skills, and professional journey.
+- **Frontend (`/`)**: React 19, React Router, Vite. Hosted as a Render static site.
+- **Backend (`/backend`)**: Node.js 20+ and Express 5. It serves one public endpoint, which validates a contact form submission and emails it to me. Hosted as a Render web service.
 
-## Tech Stack
+## Backend
 
-This website was built with the following technologies:
+The contact API is public, so most of the backend is about handling untrusted input safely:
 
-* **Front-End:**
-    * **React:** For building the user interface with a component-based architecture.
-    * **Vite:** As the build tool for a fast and modern development experience.
-    * **React Router:** For client-side routing to create a seamless single-page application.
-    * **HTML5 & CSS3:** For structure and styling.
+- **Validation:** fields must be non-empty strings within length limits (name 100, email 254, message 5,000 characters). JSON bodies are capped at 10 KB.
+- **Output encoding:** user input is HTML-escaped where the notification email is built, and a plain-text version is sent alongside. The stored text is never rewritten.
+- **Spam protection:** a hidden honeypot field, a minimum time-to-submit check, and per-IP rate limiting (5 per hour). `trust proxy` is set so rate limits key on the visitor's IP behind Render's proxy.
+- **Hardening:** security headers via `helmet`, CORS restricted to the site's origin, and JSON 404/error responses that don't leak stack traces.
+- **Operations:** `GET /health` for Render's health check, and graceful shutdown on `SIGTERM` so in-flight requests finish during deploys.
 
-* **Back-End (Future Development):**
-    * **Node.js & Express:** Planned for building a RESTful API to handle features like a functional contact form.
-    * **MongoDB:** Planned for database management to store project data or blog posts.
+## Testing and CI
 
-* **Deployment:**
-    * **Git & GitHub:** For version control.
-    * **Render:** For continuous deployment and hosting.
+- **Jest + Supertest** cover validation, escaping, spam protection, rate limiting behind a proxy, and error handling (`cd backend && npm test`).
+- **GitHub Actions** runs the tests on Node 22 and 24 for every push and pull request. A second job fails the build if any image in `public/` contains GPS or camera metadata (`scripts/check-image-metadata.sh`).
+
+## Running locally
+
+```bash
+# Frontend (http://localhost:5173)
+npm install
+npm run dev
+
+# Backend (http://localhost:5001)
+cd backend
+cp .env.example .env   # then fill in the values
+npm install
+npm run dev
+```
+
+The backend needs a Gmail [app password](https://myaccount.google.com/apppasswords) in `EMAIL_PASS`. See `backend/.env.example` for all variables.
