@@ -1,5 +1,6 @@
 import React from 'react';
 import './AboutPage.css'; // Make sure to import the new CSS file
+import { portraits } from '../data/photosData';
 
 function AboutPage() {
   return (
@@ -7,7 +8,7 @@ function AboutPage() {
       <h1>About Me</h1>
       <section className="about-section">
         <div className="image-container">
-          <img src="/Me_Sunglasses.png" alt="Joe wearing sunglasses" />
+          <img src={portraits.sunglasses.src} srcSet={portraits.sunglasses.srcSet} sizes="200px" alt="Joe wearing sunglasses" />
         </div>
         <div className="text-container">
           <p>
@@ -27,7 +28,7 @@ function AboutPage() {
       <h2>A History</h2>
       <section className="about-section">
         <div className="image-container">
-          <img src="/Me_No_Sunglasses.png" alt="Joe not wearing sunglasses" />
+          <img src={portraits.noSunglasses.src} srcSet={portraits.noSunglasses.srcSet} sizes="200px" alt="Joe not wearing sunglasses" />
         </div>
                 <div className="text-container">
           <p>

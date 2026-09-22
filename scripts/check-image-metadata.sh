@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
-# Fails if any image in public/ carries location or camera-identifying metadata.
-# Phone photos embed GPS coordinates by default; anything in public/ is served to
-# every visitor, so strip it before committing:
-#   exiftool -all= --icc_profile:all -overwrite_original public/<file>
+# Fails if any image in public/ (served to every visitor) or assets-src/ (source photos
+# committed to this public repo) carries location or camera-identifying metadata.
+# Phone photos embed GPS coordinates by default, so strip it before committing:
+#   exiftool -all= --icc_profile:all -overwrite_original <file>
+# (npm run photos strips metadata from everything it writes to public/photos.)
 set -euo pipefail
 
 cd "$(dirname "$0")/.."
@@ -12,12 +13,14 @@ if ! command -v exiftool >/dev/null 2>&1; then
   exit 2
 fi
 
-shopt -s nullglob nocaseglob
-images=(public/*.png public/*.jpg public/*.jpeg public/*.webp public/*.heic public/*.tif public/*.tiff)
-shopt -u nocaseglob
+images=()
+while IFS= read -r -d '' file; do
+  images+=("$file")
+done < <(find public assets-src -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' \
+  -o -iname '*.webp' -o -iname '*.avif' -o -iname '*.heic' -o -iname '*.tif' -o -iname '*.tiff' \) -print0 2>/dev/null)
 
 if [ ${#images[@]} -eq 0 ]; then
-  echo "No images found in public/."
+  echo "No images found in public/ or assets-src/."
   exit 0
 fi
 

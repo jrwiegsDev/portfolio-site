@@ -92,6 +92,23 @@ hr {
   overflow: hidden;
 }
 
+/* Home page photo gallery (react-photo-album grid; the lightbox uses its own dark theme) */
+.photo-gallery .react-photo-album--photo {
+  border-radius: 8px;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.photo-gallery .react-photo-album--photo:hover {
+  transform: scale(1.02);
+  filter: brightness(1.08);
+}
+
+.photo-gallery .react-photo-album--photo:focus-visible {
+  outline: 3px solid var(--primary-accent);
+  outline-offset: 2px;
+}
+
 /* Introduction Section on Homepage */
 .intro-section {
   display: flex;

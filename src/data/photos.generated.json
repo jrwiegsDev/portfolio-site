@@ -1,0 +1,223 @@
+{
+  "daisy-milo": {
+    "width": 640,
+    "height": 480,
+    "src": "/photos/daisy-milo-640.webp",
+    "srcSet": [
+      {
+        "src": "/photos/daisy-milo-320.webp",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "src": "/photos/daisy-milo-640.webp",
+        "width": 640,
+        "height": 480
+      }
+    ]
+  },
+  "daisy-milo-2": {
+    "width": 480,
+    "height": 640,
+    "src": "/photos/daisy-milo-2-480.webp",
+    "srcSet": [
+      {
+        "src": "/photos/daisy-milo-2-320.webp",
+        "width": 320,
+        "height": 427
+      },
+      {
+        "src": "/photos/daisy-milo-2-480.webp",
+        "width": 480,
+        "height": 640
+      }
+    ]
+  },
+  "me-headshot": {
+    "width": 640,
+    "height": 640,
+    "src": "/photos/me-headshot-640.webp",
+    "srcSet": [
+      {
+        "src": "/photos/me-headshot-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/photos/me-headshot-640.webp",
+        "width": 640,
+        "height": 640
+      }
+    ]
+  },
+  "me-josh-fishing": {
+    "width": 360,
+    "height": 640,
+    "src": "/photos/me-josh-fishing-360.webp",
+    "srcSet": [
+      {
+        "src": "/photos/me-josh-fishing-320.webp",
+        "width": 320,
+        "height": 569
+      },
+      {
+        "src": "/photos/me-josh-fishing-360.webp",
+        "width": 360,
+        "height": 640
+      }
+    ]
+  },
+  "me-josh-fishing-2": {
+    "width": 360,
+    "height": 640,
+    "src": "/photos/me-josh-fishing-2-360.webp",
+    "srcSet": [
+      {
+        "src": "/photos/me-josh-fishing-2-320.webp",
+        "width": 320,
+        "height": 569
+      },
+      {
+        "src": "/photos/me-josh-fishing-2-360.webp",
+        "width": 360,
+        "height": 640
+      }
+    ]
+  },
+  "me-josh-zoo": {
+    "width": 640,
+    "height": 429,
+    "src": "/photos/me-josh-zoo-640.webp",
+    "srcSet": [
+      {
+        "src": "/photos/me-josh-zoo-320.webp",
+        "width": 320,
+        "height": 215
+      },
+      {
+        "src": "/photos/me-josh-zoo-640.webp",
+        "width": 640,
+        "height": 429
+      }
+    ]
+  },
+  "me-no-sunglasses": {
+    "width": 427,
+    "height": 640,
+    "src": "/photos/me-no-sunglasses-427.webp",
+    "srcSet": [
+      {
+        "src": "/photos/me-no-sunglasses-320.webp",
+        "width": 320,
+        "height": 480
+      },
+      {
+        "src": "/photos/me-no-sunglasses-427.webp",
+        "width": 427,
+        "height": 640
+      }
+    ]
+  },
+  "me-sunglasses": {
+    "width": 427,
+    "height": 640,
+    "src": "/photos/me-sunglasses-427.webp",
+    "srcSet": [
+      {
+        "src": "/photos/me-sunglasses-320.webp",
+        "width": 320,
+        "height": 480
+      },
+      {
+        "src": "/photos/me-sunglasses-427.webp",
+        "width": 427,
+        "height": 640
+      }
+    ]
+  },
+  "daisy-and-milo": {
+    "width": 640,
+    "height": 480,
+    "src": "/photos/daisy-and-milo-640.webp",
+    "srcSet": [
+      {
+        "src": "/photos/daisy-and-milo-320.webp",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "src": "/photos/daisy-and-milo-640.webp",
+        "width": 640,
+        "height": 480
+      }
+    ]
+  },
+  "me-fishing": {
+    "width": 480,
+    "height": 640,
+    "src": "/photos/me-fishing-480.webp",
+    "srcSet": [
+      {
+        "src": "/photos/me-fishing-320.webp",
+        "width": 320,
+        "height": 427
+      },
+      {
+        "src": "/photos/me-fishing-480.webp",
+        "width": 480,
+        "height": 640
+      }
+    ]
+  },
+  "me-joshua-fishing": {
+    "width": 360,
+    "height": 640,
+    "src": "/photos/me-joshua-fishing-360.webp",
+    "srcSet": [
+      {
+        "src": "/photos/me-joshua-fishing-320.webp",
+        "width": 320,
+        "height": 569
+      },
+      {
+        "src": "/photos/me-joshua-fishing-360.webp",
+        "width": 360,
+        "height": 640
+      }
+    ]
+  },
+  "me-playing-piano": {
+    "width": 457,
+    "height": 640,
+    "src": "/photos/me-playing-piano-457.webp",
+    "srcSet": [
+      {
+        "src": "/photos/me-playing-piano-320.webp",
+        "width": 320,
+        "height": 448
+      },
+      {
+        "src": "/photos/me-playing-piano-457.webp",
+        "width": 457,
+        "height": 640
+      }
+    ]
+  },
+  "music-with-dad": {
+    "width": 572,
+    "height": 640,
+    "src": "/photos/music-with-dad-572.webp",
+    "srcSet": [
+      {
+        "src": "/photos/music-with-dad-320.webp",
+        "width": 320,
+        "height": 358
+      },
+      {
+        "src": "/photos/music-with-dad-572.webp",
+        "width": 572,
+        "height": 640
+      }
+    ]
+  }
+}

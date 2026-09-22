@@ -1,4 +1,5 @@
 import React from 'react';
+import { portraits } from '../data/photosData';
 
 function Introduction() {
   return (
@@ -6,7 +7,7 @@ function Introduction() {
       <h1>Welcome!</h1>
       <div className="intro-section">
         <div className="image-hover-container headshot">
-          <img src="/Me_Headshot.png" alt="Joe's headshot" />
+          <img src={portraits.headshot.src} srcSet={portraits.headshot.srcSet} sizes="250px" alt="Joe's headshot" />
         </div>
         <div className="intro-text">
           <p>I'm a <strong>Backend Developer</strong> who enjoys building the parts of software people don't see: the APIs, data, and infrastructure everything else depends on, and the testing that keeps them working.</p>

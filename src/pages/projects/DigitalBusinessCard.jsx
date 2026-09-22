@@ -1,6 +1,7 @@
 import React from 'react';
 import HoneypotField from '../../components/HoneypotField';
 import { useContactForm, CONTACT_LIMITS } from '../../hooks/useContactForm';
+import { portraits } from '../../data/photosData';
 import './DigitalBusinessCard.css';
 
 function DigitalBusinessCard() {
@@ -10,7 +11,9 @@ function DigitalBusinessCard() {
     <div className="card-page-container">
       <div className="db-card">
         <img 
-          src="/Me_Sunglasses.png" 
+          src={portraits.sunglasses.src}
+          srcSet={portraits.sunglasses.srcSet}
+          sizes="150px"
           alt="Joe Wiegert Headshot" 
           className="db-card-headshot" 
         />
