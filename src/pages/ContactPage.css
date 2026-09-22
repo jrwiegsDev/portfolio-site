@@ -75,6 +75,11 @@
   background-color: var(--primary-accent-hover);
 }
 
+.contact-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 @media (max-width: 768px) {
   .contact-page-layout {
     flex-direction: column-reverse;

@@ -83,6 +83,15 @@ hr {
   opacity: 0.4;
 }
 
+/* Contact form honeypot - off-screen so humans never see it, but bots still fill it */
+.form-honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 /* Introduction Section on Homepage */
 .intro-section {
   display: flex;

@@ -1,40 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
+import HoneypotField from '../../components/HoneypotField';
+import { useContactForm, CONTACT_LIMITS } from '../../hooks/useContactForm';
 import './DigitalBusinessCard.css';
 
 function DigitalBusinessCard() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState('');
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({ ...prevState, [name]: value }));
-  };
-  
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    setStatus('Sending...');
-
-    try {
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5001';
-      const response = await fetch(`${apiUrl}/api/contact`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setStatus('Message sent successfully!');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        setStatus('Failed to send message. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      setStatus('An error occurred. Please try again.');
-    }
-  };
+  const { formData, status, isSubmitting, handleChange, handleSubmit } = useContactForm('business_card');
 
   return (
     <div className="card-page-container">
@@ -83,24 +53,29 @@ function DigitalBusinessCard() {
             placeholder="Your Name" 
             value={formData.name}
             onChange={handleChange}
-            required 
+            maxLength={CONTACT_LIMITS.NAME}
+            required
           />
-          <input 
-            type="email" 
-            name="email" 
-            placeholder="Your Email" 
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
             value={formData.email}
             onChange={handleChange}
-            required 
+            maxLength={CONTACT_LIMITS.EMAIL}
+            required
           />
-          <textarea 
-            name="message" 
-            placeholder="Your Message" 
+          <textarea
+            name="message"
+            placeholder="Your Message"
             value={formData.message}
             onChange={handleChange}
+            maxLength={CONTACT_LIMITS.MESSAGE}
             required
           ></textarea>
-          <button type="submit">Send Message</button>
+          {/* Honeypot field - hidden from users, bots will fill it */}
+          <HoneypotField value={formData.website} onChange={handleChange} />
+          <button type="submit" disabled={isSubmitting}>Send Message</button>
           {status && <p style={{ textAlign: 'center', marginTop: '1rem' }}>{status}</p>}
         </form>
       </div>

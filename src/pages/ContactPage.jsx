@@ -1,61 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import HoneypotField from '../components/HoneypotField';
+import { useContactForm, CONTACT_LIMITS } from '../hooks/useContactForm';
 import './ContactPage.css';
 
 function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-    website: '', // Honeypot field
-    formLoadTime: Date.now() // Track when form loaded
-  });
-  const [status, setStatus] = useState(''); // To display success/error messages
-
-  // Update formLoadTime when component mounts
-  useEffect(() => {
-    setFormData(prev => ({ ...prev, formLoadTime: Date.now() }));
-  }, []);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    setStatus('Sending...'); // Provide feedback to the user
-
-    try {
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5001';
-      const response = await fetch(`${apiUrl}/api/contact`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setStatus('Message sent successfully!');
-        setFormData({ 
-          name: '', 
-          email: '', 
-          message: '', 
-          website: '',
-          formLoadTime: Date.now() 
-        }); // Reset form
-      } else {
-        const data = await response.json();
-        setStatus(data.msg || data.message || 'Failed to send message. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      setStatus('An error occurred. Please try again.');
-    }
-  };
+  const { formData, status, isSubmitting, handleChange, handleSubmit } = useContactForm('contact_page');
 
   return (
     <div className="home-container">
@@ -69,34 +18,29 @@ function ContactPage() {
               placeholder="Your Name" 
               value={formData.name}
               onChange={handleChange}
-              required 
+              maxLength={CONTACT_LIMITS.NAME}
+              required
             />
-            <input 
-              type="email" 
+            <input
+              type="email"
               name="email"
-              placeholder="Your Email" 
+              placeholder="Your Email"
               value={formData.email}
               onChange={handleChange}
-              required 
+              maxLength={CONTACT_LIMITS.EMAIL}
+              required
             />
-            <textarea 
+            <textarea
               name="message"
-              placeholder="Your Message" 
+              placeholder="Your Message"
               value={formData.message}
               onChange={handleChange}
+              maxLength={CONTACT_LIMITS.MESSAGE}
               required
             ></textarea>
             {/* Honeypot field - hidden from users, bots will fill it */}
-            <input 
-              type="text"
-              name="website"
-              value={formData.website}
-              onChange={handleChange}
-              style={{ display: 'none' }}
-              tabIndex={-1}
-              autoComplete="off"
-            />
-            <button type="submit">Send Message</button>
+            <HoneypotField value={formData.website} onChange={handleChange} />
+            <button type="submit" disabled={isSubmitting}>Send Message</button>
             {status && <p style={{ textAlign: 'center', marginTop: '1rem' }}>{status}</p>}
           </form>
         </div>

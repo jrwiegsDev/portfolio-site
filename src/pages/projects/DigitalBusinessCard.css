@@ -160,3 +160,8 @@
 .db-contact-form button:hover {
     background-color: var(--primary-accent-hover);
 }
+
+.db-contact-form button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
