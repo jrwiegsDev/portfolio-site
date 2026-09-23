@@ -56,7 +56,8 @@ export const softwareEngineeringProjects = {
       description: 'A responsive digital business card featuring a functional back-end contact form built with Node.js and Express.'
     }
   ],
-  // Projects built for organizations that have since been handed off; no longer maintained by me
+  // Projects built for organizations that have since been handed off or shut down; no longer maintained by me.
+  // Optional `status` shows a short line on the card (e.g. when a project was shut down).
   archived: [
     {
       imageSrc: '/fortier-website.png',
@@ -79,9 +80,11 @@ export const softwareEngineeringProjects = {
       imageSrc: '/OADC.png',
       imageAlt: 'OADC Website Project',
       title: "O'Fallon Area Democratic Club Website",
-      linkUrl: 'https://ofallonildems.org/',
-      linkText: 'Visit Live Site',
-      description: 'Commissioned to build the entire website for our local Democratic Club after creating their newsletter management system. This full-stack application serves as the online hub of information and events, featuring dynamic content management, event calendars, and member resources powered by a custom Node.js/Express backend.'
+      linkUrl: null,
+      linkText: 'Click Photo for Details',
+      description: 'Commissioned to build the entire website for our local Democratic Club after creating their newsletter management system. This full-stack application served as the online hub of information and events, featuring dynamic content management, event calendars, and member resources powered by a custom Node.js/Express backend.',
+      useModal: true,
+      status: 'Sunset September 2026 · no longer online'
     },
     {
       imageSrc: '/Newsletter-Events_App.png',
@@ -89,8 +92,9 @@ export const softwareEngineeringProjects = {
       title: 'Newsletter & Events Management App',
       linkUrl: null,
       linkText: 'Click Photo for Details',
-      description: 'After noticing the local Democratic Club was manually sending individual emails from a personal Gmail account, I proactively built a comprehensive solution to streamline their community outreach. This full-stack application manages subscriber lists, automates newsletter distribution, and tracks events. Built with React, Node.js, Express, and MongoDB. The success of this initiative led to being commissioned to build their entire website.',
-      useModal: true
+      description: 'After noticing the local Democratic Club was manually sending individual emails from a personal Gmail account, I proactively built a comprehensive solution to streamline their community outreach. This full-stack application managed subscriber lists, automated newsletter distribution, and tracked events. Built with React, Node.js, Express, and MongoDB. Over 12 months in production it grew the mailing list from 118 to 179 subscribers and delivered 3,200+ emails in its final six months alone. The success of this initiative led to being commissioned to build their entire website.',
+      useModal: true,
+      status: 'Sunset September 2026 · no longer online'
     }
   ]
 };

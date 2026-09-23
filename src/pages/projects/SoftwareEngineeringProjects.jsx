@@ -29,7 +29,7 @@ function SoftwareEngineeringProjects({ filter = FILTER_TYPES.PROJECT_TYPE.PROFES
       <h2>{heading}</h2>
       {filter === FILTER_TYPES.PROJECT_TYPE.ARCHIVED && (
         <p className="archived-note">
-          Projects I built for organizations and have since handed off. I no longer maintain them, so live sites may have changed.
+          Projects I built for organizations. Some have been handed off and some have been shut down, and I no longer maintain any of them.
         </p>
       )}
       <div className="project-grid">
@@ -46,6 +46,7 @@ function SoftwareEngineeringProjects({ filter = FILTER_TYPES.PROJECT_TYPE.PROFES
                   style={{ cursor: 'pointer' }}
                 />
                 <h2>{project.title}</h2>
+                {project.status && <p className="project-status">{project.status}</p>}
                 <p><strong>Goal:</strong> {project.description}</p>
                 <p>
                   <span 
@@ -73,6 +74,7 @@ function SoftwareEngineeringProjects({ filter = FILTER_TYPES.PROJECT_TYPE.PROFES
               linkUrl={project.linkUrl}
               linkText={project.linkText}
             >
+              {project.status && <p className="project-status">{project.status}</p>}
               <p><strong>Goal:</strong> {project.description}</p>
             </ProjectCard>
           );

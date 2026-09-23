@@ -40,6 +40,14 @@
   font-style: italic;
 }
 
+/* Short status line on an individual project card (e.g. sunset date) */
+.project-status {
+  color: var(--text-secondary);
+  font-size: 0.9em;
+  font-style: italic;
+  margin-top: 0;
+}
+
 /* Grid layout for the project cards */
 .project-grid {
   display: grid;
