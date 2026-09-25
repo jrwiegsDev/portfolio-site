@@ -12,6 +12,14 @@ export const softwareEngineeringProjects = {
       linkUrl: 'https://pledgetovote2026.com/',
       linkText: 'Visit Live Site',
       description: 'A personal project to encourage participation in our civic process by pledging to make your voices heard in the 2026 Midterm Elections. Built with React and features an interactive pledge form with real-time validation.'
+    },
+    {
+      imageSrc: '/asteroids.png',
+      imageAlt: 'Asteroids game running in the browser',
+      title: 'Asteroids',
+      linkUrl: 'https://asteroids-1nst.onrender.com/',
+      linkText: 'Click to Play!',
+      description: 'Bring the classic arcade game to the browser with nothing to install: written in Python with pygame and compiled to WebAssembly with pygbag. Started as a Boot.dev guided project; I extended it with scoring, lives, respawn invulnerability, and restart, then added a GitHub Actions CI build check and automatic deploys to a Render static site. Keyboard controls for now, with mobile touch controls coming next.'
     }
   ],
   skills: [
