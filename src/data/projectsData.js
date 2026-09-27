@@ -6,14 +6,6 @@
 export const softwareEngineeringProjects = {
   professional: [
     {
-      imageSrc: '/Pledge-to-Vote-2026.png',
-      imageAlt: 'Pledge to Vote 2026 Project',
-      title: 'Pledge to Vote 2026',
-      linkUrl: 'https://pledgetovote2026.com/',
-      linkText: 'Visit Live Site',
-      description: 'A personal project to encourage participation in our civic process by pledging to make your voices heard in the 2026 Midterm Elections. Built with React and features an interactive pledge form with real-time validation.'
-    },
-    {
       imageSrc: '/asteroids.png',
       imageAlt: 'Asteroids game running in the browser',
       title: 'Asteroids',
@@ -64,9 +56,18 @@ export const softwareEngineeringProjects = {
       description: 'A responsive digital business card featuring a functional back-end contact form built with Node.js and Express.'
     }
   ],
-  // Projects built for organizations that have since been handed off or shut down; no longer maintained by me.
+  // Personal and organization projects that have since been handed off or shut down; no longer maintained by me.
   // Optional `status` shows a short line on the card (e.g. when a project was shut down).
   archived: [
+    {
+      imageSrc: '/Pledge-to-Vote-2026.png',
+      imageAlt: 'Pledge to Vote 2026 Project',
+      title: 'Pledge to Vote 2026',
+      linkUrl: 'https://github.com/jrwiegsDev/pledge-to-vote-2026',
+      linkText: 'View Source on GitHub',
+      description: 'My very first full-stack project, built early in my self-taught journey with a lot of help from AI. A site where people pledged to vote in the 2026 Midterms, with a React front end, a Node.js/Express and MongoDB API, a live U.S. heatmap, a Socket.io online-user counter, and server-generated share images. Now that my focus is backend engineering, there is a lot I would build differently; the README on GitHub walks through what and why.',
+      status: 'Archived September 2026 · no longer online'
+    },
     {
       imageSrc: '/fortier-website.png',
       imageAlt: 'Julie Fortier Campaign Website',

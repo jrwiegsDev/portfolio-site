@@ -29,7 +29,7 @@ function SoftwareEngineeringProjects({ filter = FILTER_TYPES.PROJECT_TYPE.PROFES
       <h2>{heading}</h2>
       {filter === FILTER_TYPES.PROJECT_TYPE.ARCHIVED && (
         <p className="archived-note">
-          Projects I built for organizations. Some have been handed off and some have been shut down, and I no longer maintain any of them.
+          Personal projects and projects I built for organizations. Some have been handed off and some have been shut down, and I no longer maintain any of them.
         </p>
       )}
       <div className="project-grid">
