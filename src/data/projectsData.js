@@ -16,14 +16,6 @@ export const softwareEngineeringProjects = {
   ],
   skills: [
     {
-      imageSrc: '/survey-app.png',
-      imageAlt: 'Survey & Polling App',
-      title: 'Survey & Polling App',
-      linkUrl: 'https://survey-app-zuvw.onrender.com',
-      linkText: 'View Live Project',
-      description: 'A full-stack polling application where users can vote on various topics and see the results update instantly. Built with a React front-end, a Node.js/Express back-end, and a MongoDB database.'
-    },
-    {
       imageSrc: '/markdown-previewer.png',
       imageAlt: 'Markdown Previewer Project',
       title: 'React Markdown Previewer',
@@ -65,7 +57,16 @@ export const softwareEngineeringProjects = {
       title: 'Pledge to Vote 2026',
       linkUrl: 'https://github.com/jrwiegsDev/pledge-to-vote-2026',
       linkText: 'View Source on GitHub',
-      description: 'My very first full-stack project, built early in my self-taught journey with a lot of help from AI. A site where people pledged to vote in the 2026 Midterms, with a React front end, a Node.js/Express and MongoDB API, a live U.S. heatmap, a Socket.io online-user counter, and server-generated share images. Now that my focus is backend engineering, there is a lot I would build differently; the README on GitHub walks through what and why.',
+      description: 'My first full-stack project shipped to a real domain, built early in my self-taught journey with a lot of help from AI. A site where people pledged to vote in the 2026 Midterms, with a React front end, a Node.js/Express and MongoDB API, a live U.S. heatmap, a Socket.io online-user counter, and server-generated share images. Now that my focus is backend engineering, there is a lot I would build differently; the README on GitHub walks through what and why.',
+      status: 'Archived September 2026 · no longer online'
+    },
+    {
+      imageSrc: '/survey-app.png',
+      imageAlt: 'Survey & Polling App',
+      title: 'Survey & Polling App',
+      linkUrl: 'https://github.com/jrwiegsDev/survey-app',
+      linkText: 'View Source on GitHub',
+      description: 'A full-stack polling application where users voted on topics and saw the results update instantly. Built with a React front end, a Node.js/Express API, and a MongoDB database, early in my self-taught journey.',
       status: 'Archived September 2026 · no longer online'
     },
     {

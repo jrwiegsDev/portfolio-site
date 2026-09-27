@@ -1,0 +1,3 @@
+# The notebooks in public/ are downloadable portfolio samples, not site code.
+# Keep them out of GitHub's language stats so the repo shows as JavaScript.
+public/*.ipynb linguist-documentation
