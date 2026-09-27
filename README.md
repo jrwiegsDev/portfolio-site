@@ -41,3 +41,7 @@ npm run dev
 ```
 
 The backend needs a Gmail [app password](https://myaccount.google.com/apppasswords) in `EMAIL_PASS`. See `backend/.env.example` for all variables.
+
+## License
+
+The source code is released under the [MIT License](LICENSE). My personal photos (`public/photos/` and `assets-src/photos/`) and my resume (`public/Joe_Wiegert_Resume.pdf`) are not covered by the license and may not be reused without my permission.
