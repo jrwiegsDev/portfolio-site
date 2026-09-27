@@ -49,13 +49,9 @@ function SoftwareEngineeringProjects({ filter = FILTER_TYPES.PROJECT_TYPE.PROFES
                 {project.status && <p className="project-status">{project.status}</p>}
                 <p><strong>Goal:</strong> {project.description}</p>
                 <p>
-                  <span 
+                  <span
                     onClick={() => handleImageClick(project.imageSrc, project.imageAlt)}
-                    style={{ 
-                      color: '#61dafb', 
-                      cursor: 'pointer',
-                      textDecoration: 'underline'
-                    }}
+                    className="project-modal-link"
                   >
                     {project.linkText}
                   </span>

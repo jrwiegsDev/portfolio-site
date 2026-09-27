@@ -5,7 +5,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid var(--background);
+  border-bottom: 1px solid var(--border);
   box-shadow: 0 4px 12px var(--shadow-color);
 }
 
@@ -43,7 +43,7 @@ nav {
 
 /* Buy Me a Coffee button */
 .coffee-button {
-  background-color: var(--primary-accent);
+  background-color: var(--warm-accent);
   padding: 0.5rem 0.75rem;
   border-radius: 8px;
   border: none;
@@ -58,7 +58,7 @@ nav {
 }
 
 .coffee-button:hover {
-  background-color: var(--primary-accent-hover);
+  background-color: var(--warm-accent-hover);
   transform: translateY(-2px) scale(1.1);
 }
 

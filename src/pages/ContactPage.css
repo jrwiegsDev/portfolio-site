@@ -18,6 +18,7 @@
   min-width: 300px;
   background-color: var(--surface);
   padding: 2rem;
+  border: 1px solid var(--border);
   border-radius: 15px;
   box-shadow: 0 5px 15px var(--shadow-color);
 }
@@ -25,7 +26,7 @@
 .contact-links-container h3 {
   margin-top: 0;
   color: var(--primary-accent);
-  border-bottom: 2px solid var(--background);
+  border-bottom: 2px solid var(--border);
   padding-bottom: 0.5rem;
   margin-bottom: 1.5rem;
 }
@@ -38,8 +39,8 @@
 
 .contact-form input,
 .contact-form textarea {
-  background-color: var(--background);
-  border: 1px solid var(--surface);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 12px;
   color: var(--text-primary);
@@ -51,7 +52,7 @@
 .contact-form textarea:focus {
   outline: none;
   border-color: var(--primary-accent);
-  box-shadow: 0 0 0 2px var(--primary-accent-hover);
+  box-shadow: 0 0 0 3px var(--focus-ring);
 }
 
 .contact-form textarea {
@@ -65,7 +66,7 @@
   border-radius: 8px;
   border: none;
   background-color: var(--primary-accent);
-  color: var(--background);
+  color: var(--on-accent);
   font-weight: bold;
   font-size: 1rem;
   transition: background-color 0.2s ease;
@@ -107,14 +108,14 @@
 .coffee-section {
   margin-top: 2rem;
   padding-top: 1.5rem;
-  border-top: 2px solid var(--background);
+  border-top: 2px solid var(--border);
   text-align: center;
 }
 
 .coffee-link {
   display: inline-block;
-  background-color: var(--primary-accent);
-  color: var(--background);
+  background-color: var(--warm-accent);
+  color: var(--text-primary);
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
   font-weight: bold;
@@ -125,7 +126,9 @@
 }
 
 .coffee-link:hover {
-  background-color: var(--primary-accent-hover);
+  background-color: var(--warm-accent-hover);
+  color: var(--text-primary);
+  text-decoration: none;
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px var(--shadow-color);
+  box-shadow: 0 6px 12px var(--shadow-color-strong);
 }
