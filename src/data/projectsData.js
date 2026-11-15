@@ -6,6 +6,15 @@
 export const softwareEngineeringProjects = {
   professional: [
     {
+      imageSrc: '/dopolitics.png',
+      imageAlt: 'DoPolitics showing the officials for the Illinois State Capitol and the representative\'s attendance, pay and votes',
+      title: 'DoPolitics',
+      linkUrl: 'https://dopolitics.org',
+      linkText: 'Visit Live Site',
+      description: 'Enter a street address and see your two U.S. senators and your representative, how often they show up to vote, what they\'re paid, and the bill behind every vote. Built backend-first in Python with FastAPI and PostgreSQL/PostGIS: the address is geocoded with the Census and matched to its district with a point-in-polygon query, then discarded, never stored or logged.',
+      status: 'Live since November 2026'
+    },
+    {
       imageSrc: '/asteroids.png',
       imageAlt: 'Asteroids game running in the browser',
       title: 'Asteroids',
