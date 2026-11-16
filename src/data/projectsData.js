@@ -11,8 +11,7 @@ export const softwareEngineeringProjects = {
       title: 'DoPolitics',
       linkUrl: 'https://dopolitics.org',
       linkText: 'Visit Live Site',
-      description: 'Enter a street address and see your two U.S. senators and your representative, how often they show up to vote, what they\'re paid, and the bill behind every vote. Built backend-first in Python with FastAPI and PostgreSQL/PostGIS: the address is geocoded with the Census and matched to its district with a point-in-polygon query, then discarded, never stored or logged.',
-      status: 'Live since November 2026'
+      description: 'Enter a street address and see your two U.S. senators and your representative, how often they show up to vote, what they\'re paid, and the bill behind every vote. Built backend-first in Python with FastAPI and PostgreSQL/PostGIS: the address is geocoded with the Census and matched to its district with a point-in-polygon query, then discarded, never stored or logged. Nightly Render cron jobs load new votes and bills, and Claude drafts plain-language summaries that I review before they\'re marked reviewed, with retries, a spending cap and monthly tested backups behind them.'
     },
     {
       imageSrc: '/asteroids.png',
