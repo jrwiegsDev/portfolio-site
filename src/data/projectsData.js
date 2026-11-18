@@ -81,9 +81,11 @@ export const softwareEngineeringProjects = {
       imageSrc: '/fortier-website.png',
       imageAlt: 'Julie Fortier Campaign Website',
       title: 'Julie Fortier for Congress Campaign Website',
-      linkUrl: 'https://www.juliefortier.com/',
-      linkText: 'Visit Live Site',
-      description: 'Full-stack campaign website built for Julie Fortier\'s Congressional campaign. Features dynamic content management for events, donation integration, and responsive design to engage voters across all devices. Built with React, Node.js, Express, and MongoDB.'
+      linkUrl: null,
+      linkText: 'Click Photo for Details',
+      description: 'The public website for Julie Fortier\'s 2026 Congressional campaign (IL-12): her story, her policy platform, an events calendar, and volunteer signup and contact forms, all served by the backend of the volunteer management system I built alongside it. A responsive, accessible single-page front end built with React, React Router, and Vite.',
+      useModal: true,
+      status: 'Sunset August 2026 · no longer online'
     },
     {
       imageSrc: '/volunteer-dashboard.png',
@@ -92,7 +94,8 @@ export const softwareEngineeringProjects = {
       linkUrl: null,
       linkText: 'Click Photo for Details',
       description: 'A volunteer signup site and admin dashboard for the Fortier campaign. Supporters registered for volunteer opportunities, and campaign staff managed volunteers, tracked event requests, coordinated outreach, and analyzed volunteer data. Features secure authentication, role-based access control, data visualization, and export capabilities. Built with React, Node.js, Express, and MongoDB.',
-      useModal: true
+      useModal: true,
+      status: 'Sunset August 2026 · no longer online'
     },
     {
       imageSrc: '/OADC.png',

@@ -21,8 +21,7 @@ function DigitalBusinessCard() {
         <h3>Backend Developer</h3>
         <div className="db-action-buttons">
           <a 
-            href="/Joe_Wiegert_Resume.pdf"
-            download 
+            href="/resume"
             className="db-action-btn db-btn-primary"
           >
             Download Resume
@@ -39,16 +38,16 @@ function DigitalBusinessCard() {
         <div className="db-skills-section">
           <h4>Skills</h4>
           <ul className="db-skills-list">
-            <li className="db-skill-item">Node.js</li>
-            <li className="db-skill-item">Express</li>
-            <li className="db-skill-item">REST APIs</li>
             <li className="db-skill-item">Python</li>
+            <li className="db-skill-item">FastAPI</li>
+            <li className="db-skill-item">PostgreSQL</li>
             <li className="db-skill-item">SQL</li>
-            <li className="db-skill-item">MongoDB</li>
-            <li className="db-skill-item">JavaScript (ES6+)</li>
-            <li className="db-skill-item">React</li>
-            <li className="db-skill-item">QA & Testing</li>
-            <li className="db-skill-item">Git & GitHub</li>
+            <li className="db-skill-item">REST APIs</li>
+            <li className="db-skill-item">pytest</li>
+            <li className="db-skill-item">Playwright</li>
+            <li className="db-skill-item">GitHub Actions</li>
+            <li className="db-skill-item">Docker</li>
+            <li className="db-skill-item">Render</li>
           </ul>
         </div>
         <form className="db-contact-form" onSubmit={handleSubmit}>
